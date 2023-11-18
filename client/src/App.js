@@ -1,9 +1,14 @@
 import './App.css';
+import Kakao from "./Kakao";
+import { Fragment } from "react";
+import { Moonhaeryuk } from "./pages/moonhaeryuk";
 
 function App() {
   return (
-    <div className="App">
-      백경이와 친구들 화이팅!!
+    <div>
+      <Fragment>
+        <Moonhaeryuk />
+      </Fragment>
     </div>
   );
 }
