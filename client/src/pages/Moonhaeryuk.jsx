@@ -37,7 +37,7 @@ export const Moonhaeryuk = () => {
         style={{
           margin: "0",
           backgroundColor: "white",
-          height: "100vh",
+          height: "95vh",
           display: "flex",
           justifyContent: "center",
         }}
@@ -45,7 +45,7 @@ export const Moonhaeryuk = () => {
         <div
           style={{
             margin: "0",
-            height: "100vh",
+            height: "95vh",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",

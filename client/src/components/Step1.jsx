@@ -4,17 +4,25 @@ import Container from "../UI/Container";
 import "../index.css";
 
 const Question = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
   border-radius: 10px;
   padding: 4px;
   border: 1px black solid;
-  margin-left: 5vw;
-  margin-right: 5vw;
   margin: 10;
   width: 85vw;
   height: 5vh;
+  @media (min-width: 800px) {
+    width: 30vw;
+  }
+  @media (max-width: 250px) {
+    width: 100vw;
+  }
 `;
 const QuestionContents = styled.div`
+  font-family: "Black Han Sans", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,6 +55,9 @@ export const Step1 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
           style={{
             display: "flex",
             flexDirection: "column",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
             gap: 20,
             height: 300,
           }}
@@ -58,7 +69,7 @@ export const Step1 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
               alignItems: "center",
             }}
           >
-            1번문제
+            1번. 내일 점심!!
           </div>
           <Question
             style={{
@@ -67,9 +78,7 @@ export const Step1 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
-            <QuestionContents>
-              저는 백경이와 친구들 팀입니다 저ㅇ희는 완전 짱잉요 ㅎㅎㅎㅎ
-            </QuestionContents>
+            <QuestionContents>짜장면</QuestionContents>
           </Question>
           <Question
             style={{
@@ -77,7 +86,7 @@ export const Step1 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
-            <QuestionContents>2번</QuestionContents>
+            <QuestionContents>부대찌개ㅔ</QuestionContents>
           </Question>
           <Question
             style={{
@@ -86,7 +95,7 @@ export const Step1 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(3)}
           >
-            <QuestionContents>3번</QuestionContents>
+            <QuestionContents>돼지국밥</QuestionContents>
           </Question>
           <Question
             style={{
@@ -95,7 +104,7 @@ export const Step1 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(4)}
           >
-            <QuestionContents>4번</QuestionContents>
+            <QuestionContents>콘푸로스트</QuestionContents>
           </Question>
           {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
         </div>
