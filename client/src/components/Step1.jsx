@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import styled from "styled-components";
 import Container from "../UI/Container";
+import quizImg from "../assets/quiz1_3_img.png";
 import "../index.css";
 
 const Question = styled.div`
@@ -62,6 +63,7 @@ export const Step1 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             height: 300,
           }}
         >
+          <img src={quizImg} style={{ height: "30vh" }} />
           <div
             style={{
               display: "flex",
