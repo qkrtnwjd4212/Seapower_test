@@ -1,5 +1,4 @@
 import { Fragment, useState } from "react";
-import styled from "styled-components";
 import Container from "../UI/Container";
 import quizImg from "../assets/quiz1_3_img.png";
 import "../index.css";

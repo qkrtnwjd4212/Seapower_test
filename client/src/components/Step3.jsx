@@ -1,4 +1,9 @@
 import { Fragment, useState } from "react";
+import Container from "../UI/Container";
+import quizImg from "../assets/quiz1_3_img.png";
+import "../index.css";
+import Question from "../UI/Question";
+import QuestionContents from "../UI/QuestionContents";
 
 export const Step3 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
   const [isAnswer, setIsAnswer] = useState(false);
@@ -22,61 +27,65 @@ export const Step3 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
 
   return (
     <Fragment>
-      3번문제
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 20,
-          height: 300,
-        }}
-      >
+      <Container>
         <div
           style={{
-            border: "1px solid black",
-            borderRadius: 4,
-            margin: 10,
-            backgroundColor: selectedValue === 1 ? "red" : "white",
+            display: "flex",
+            flexDirection: "column",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 10,
           }}
-          onClick={isSelect ? nonEvent : () => onClick(1)}
         >
-          1번
+          <img src={quizImg} style={{ height: "25vh" }} />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            1번. 내일 점심!!
+          </div>
+          <Question
+            style={{
+              backgroundColor:
+                selectedValue === 1 ? "red" : "var(--bright-blue)",
+            }}
+            onClick={isSelect ? nonEvent : () => onClick(1)}
+          >
+            <QuestionContents>짜장면</QuestionContents>
+          </Question>
+          <Question
+            style={{
+              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
+            }}
+            onClick={isSelect ? nonEvent : () => onClick(2)}
+          >
+            <QuestionContents>부대찌개ㅔ</QuestionContents>
+          </Question>
+          <Question
+            style={{
+              backgroundColor:
+                selectedValue === 3 ? "red" : "var(--bright-blue)",
+            }}
+            onClick={isSelect ? nonEvent : () => onClick(3)}
+          >
+            <QuestionContents>돼지국밥</QuestionContents>
+          </Question>
+          <Question
+            style={{
+              backgroundColor:
+                selectedValue === 4 ? "red" : "var(--bright-blue)",
+            }}
+            onClick={isSelect ? nonEvent : () => onClick(4)}
+          >
+            <QuestionContents>콘푸로스트</QuestionContents>
+          </Question>
+          {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
         </div>
-        <div
-          style={{
-            border: "1px solid black",
-            borderRadius: 4,
-            margin: 10,
-            backgroundColor: isSelect ? "green" : "white",
-          }}
-          onClick={isSelect ? nonEvent : () => onClick(2)}
-        >
-          2번
-        </div>
-        <div
-          style={{
-            border: "1px solid black",
-            borderRadius: 4,
-            margin: 10,
-            backgroundColor: selectedValue === 3 ? "red" : "white",
-          }}
-          onClick={isSelect ? nonEvent : () => onClick(3)}
-        >
-          3번
-        </div>
-        <div
-          style={{
-            border: "1px solid black",
-            borderRadius: 4,
-            margin: 10,
-            backgroundColor: selectedValue === 4 ? "red" : "white",
-          }}
-          onClick={isSelect ? nonEvent : () => onClick(4)}
-        >
-          4번
-        </div>
-        {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
-      </div>
+      </Container>
     </Fragment>
   );
 };
