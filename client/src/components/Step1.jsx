@@ -50,8 +50,7 @@ export const Step1 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
           </div>
           <Question
             style={{
-              backgroundColor:
-                selectedValue === 1 ? "green" : "var(--bright-blue)",
+              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
@@ -59,7 +58,8 @@ export const Step1 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
           </Question>
           <Question
             style={{
-              backgroundColor: isSelect ? "red" : "var(--bright-blue)",
+              backgroundColor:
+                selectedValue === 2 ? "red" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >

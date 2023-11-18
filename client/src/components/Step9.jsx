@@ -62,7 +62,8 @@ export const Step9 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
           </Question>
           <Question
             style={{
-              backgroundColor: isSelect ? "red" : "var(--bright-blue)",
+              backgroundColor:
+                selectedValue === 2 ? "red" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
@@ -79,8 +80,7 @@ export const Step9 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
           </Question>
           <Question
             style={{
-              backgroundColor:
-                selectedValue === 4 ? "green" : "var(--bright-blue)",
+              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(4)}
           >
