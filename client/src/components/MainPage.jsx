@@ -13,7 +13,7 @@ const Container = styled.div`
 export const MainPage = () => {
   return (
     <Fragment>
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div>
         <Container>
           <img
             src={MainPageWave}

@@ -21,10 +21,18 @@ export const Moonhaeryuk = () => {
 
   return (
     <Fragment>
-      <div style={{ backgroundColor: "white", height: "100vh" }}>
+      <div
+        style={{
+          margin: "0",
+          backgroundColor: "white",
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <div
           style={{
-            height: "100%",
+            height: "100vh",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
