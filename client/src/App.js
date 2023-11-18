@@ -1,4 +1,3 @@
-import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Kakao from "./Kakao";
 import { Fragment } from "react";

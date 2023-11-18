@@ -32,6 +32,7 @@ export const Moonhaeryuk = () => {
       >
         <div
           style={{
+            margin: "0",
             height: "100vh",
             display: "flex",
             flexDirection: "column",
