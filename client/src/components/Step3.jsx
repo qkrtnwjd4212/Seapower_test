@@ -9,7 +9,7 @@ export const Step3 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
   const [isAnswer, setIsAnswer] = useState(false);
   const [selectedValue, setSectedValue] = useState(null);
 
-  const answer = 2;
+  const answer = 1;
 
   const onClick = (value) => {
     setIsSelect((prev) => !prev);
@@ -46,24 +46,26 @@ export const Step3 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
               alignItems: "center",
             }}
           >
-            1번. 내일 점심!!
+            선크림에 들어있는 옥시벤존, 옥티녹세이트는 산호의 ____을 일으켜 해양
+            생태계에 악영향을 끼칩니다. 산호가 수온의 급격한 변화로 하얗게
+            죽어가는 이러한 현상을 무엇이라고 할까요?
           </div>
           <Question
             style={{
               backgroundColor:
-                selectedValue === 1 ? "red" : "var(--bright-blue)",
+                selectedValue === 1 ? "green" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
-            <QuestionContents>짜장면</QuestionContents>
+            <QuestionContents>백화현상</QuestionContents>
           </Question>
           <Question
             style={{
-              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
+              backgroundColor: isSelect ? "red" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
-            <QuestionContents>부대찌개ㅔ</QuestionContents>
+            <QuestionContents>흑화현상</QuestionContents>
           </Question>
           <Question
             style={{
@@ -72,7 +74,7 @@ export const Step3 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(3)}
           >
-            <QuestionContents>돼지국밥</QuestionContents>
+            <QuestionContents>적화현상</QuestionContents>
           </Question>
           <Question
             style={{
@@ -81,7 +83,7 @@ export const Step3 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(4)}
           >
-            <QuestionContents>콘푸로스트</QuestionContents>
+            <QuestionContents>녹화현상</QuestionContents>
           </Question>
           {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
         </div>

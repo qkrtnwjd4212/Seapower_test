@@ -9,7 +9,7 @@ export const Step1 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
   const [isAnswer, setIsAnswer] = useState(false);
   const [selectedValue, setSectedValue] = useState(null);
 
-  const answer = 2;
+  const answer = 1;
 
   const onClick = (value) => {
     setIsSelect((prev) => !prev);
@@ -46,24 +46,24 @@ export const Step1 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
               alignItems: "center",
             }}
           >
-            1번. 내일 점심!!
+            해양쓰레기 중 가장 높은 비율을 차지하는 쓰레기는 무엇일까요?
           </div>
           <Question
             style={{
               backgroundColor:
-                selectedValue === 1 ? "red" : "var(--bright-blue)",
+                selectedValue === 1 ? "green" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
-            <QuestionContents>짜장면</QuestionContents>
+            <QuestionContents>플라스틱</QuestionContents>
           </Question>
           <Question
             style={{
-              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
+              backgroundColor: isSelect ? "red" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
-            <QuestionContents>부대찌개ㅔ</QuestionContents>
+            <QuestionContents>유리</QuestionContents>
           </Question>
           <Question
             style={{
@@ -72,7 +72,7 @@ export const Step1 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(3)}
           >
-            <QuestionContents>돼지국밥</QuestionContents>
+            <QuestionContents>마스크</QuestionContents>
           </Question>
           <Question
             style={{
@@ -81,7 +81,7 @@ export const Step1 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(4)}
           >
-            <QuestionContents>콘푸로스트</QuestionContents>
+            <QuestionContents>종이</QuestionContents>
           </Question>
           {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
         </div>

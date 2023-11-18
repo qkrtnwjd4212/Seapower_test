@@ -46,7 +46,7 @@ export const Step2 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
               alignItems: "center",
             }}
           >
-            1번. 내일 점심!!
+            바다에서 가장 많이 버려지는 쓰레기는 무엇일까요?
           </div>
           <Question
             style={{
@@ -55,7 +55,7 @@ export const Step2 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
-            <QuestionContents>짜장면</QuestionContents>
+            <QuestionContents>슬라임</QuestionContents>
           </Question>
           <Question
             style={{
@@ -63,7 +63,7 @@ export const Step2 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
-            <QuestionContents>부대찌개ㅔ</QuestionContents>
+            <QuestionContents>담배꽁초</QuestionContents>
           </Question>
           <Question
             style={{
@@ -72,7 +72,7 @@ export const Step2 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(3)}
           >
-            <QuestionContents>돼지국밥</QuestionContents>
+            <QuestionContents>아이패드</QuestionContents>
           </Question>
           <Question
             style={{
@@ -81,7 +81,7 @@ export const Step2 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(4)}
           >
-            <QuestionContents>콘푸로스트</QuestionContents>
+            <QuestionContents>탕후루 나무꼬치</QuestionContents>
           </Question>
           {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
         </div>
