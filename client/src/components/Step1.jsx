@@ -1,8 +1,10 @@
 import { Fragment, useState } from "react";
 import styled from "styled-components";
 import Container from "../UI/Container";
+import "../index.css";
 
 const Question = styled.div`
+  color: white;
   border-radius: 10px;
   padding: 4px;
   border: 1px black solid;
@@ -14,8 +16,8 @@ const Question = styled.div`
 `;
 const QuestionContents = styled.div`
   display: flex;
-  justifycontent: center;
-  alignitems: center;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Step1 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
@@ -60,35 +62,40 @@ export const Step1 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
           </div>
           <Question
             style={{
-              backgroundColor: selectedValue === 1 ? "red" : "#0096c7",
+              backgroundColor:
+                selectedValue === 1 ? "red" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
-            1번
+            <QuestionContents>
+              저는 백경이와 친구들 팀입니다 저ㅇ희는 완전 짱잉요 ㅎㅎㅎㅎ
+            </QuestionContents>
           </Question>
           <Question
             style={{
-              backgroundColor: isSelect ? "green" : "#0096c7",
+              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
-            2번
+            <QuestionContents>2번</QuestionContents>
           </Question>
           <Question
             style={{
-              backgroundColor: selectedValue === 3 ? "red" : "#0096c7",
+              backgroundColor:
+                selectedValue === 3 ? "red" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(3)}
           >
-            3번
+            <QuestionContents>3번</QuestionContents>
           </Question>
           <Question
             style={{
-              backgroundColor: selectedValue === 4 ? "red" : "#0096c7",
+              backgroundColor:
+                selectedValue === 4 ? "red" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(4)}
           >
-            4번
+            <QuestionContents>4번</QuestionContents>
           </Question>
           {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
         </div>
