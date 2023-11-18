@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 100vw;
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 100vw;
   flex-direction: column;
   @media (min-width: 800px) {
-    width: 30vw;
+    width: 40vw;
   }
   @media (max-width: 250px) {
     width: 100vw;

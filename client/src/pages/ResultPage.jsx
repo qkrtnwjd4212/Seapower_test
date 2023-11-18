@@ -10,7 +10,7 @@ export const ResultPage = () => {
   return (
     <Fragment>
       {step == 1 && <Result1 />}
-      <div>결과 페이지</div>
+      
     </Fragment>
   );
 };
