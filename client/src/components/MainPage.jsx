@@ -19,7 +19,7 @@ export const MainPage = () => {
           <img
             src={MainPageWave}
             alt="WaveImage"
-            style={{ width: "100vw", height: "75vh" }}
+            style={{ width: "100vw", height: "75vh", marginTop: "5vh" }}
           />
         </Container>
       </div>

@@ -59,11 +59,10 @@ export const Step1 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            gap: 20,
-            height: 300,
+            gap: 10,
           }}
         >
-          <img src={quizImg} style={{ height: "30vh" }} />
+          <img src={quizImg} style={{ height: "25vh" }} />
           <div
             style={{
               display: "flex",
