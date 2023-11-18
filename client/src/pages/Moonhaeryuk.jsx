@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
-import { Step1, Step2, Step3 } from "./components";
+import { Step1, Step2, Step3 } from "../components";
 
 export const Moonhaeryuk = () => {
   const [step, setStep] = useState(0);
