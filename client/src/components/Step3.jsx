@@ -5,7 +5,12 @@ import "../index.css";
 import Question from "../UI/Question";
 import QuestionContents from "../UI/QuestionContents";
 
-export const Step3 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
+export const Step3 = ({
+  totalScoreHandler,
+  setIsSelect,
+  isSelect,
+  conservationScoreHandler,
+}) => {
   const [isAnswer, setIsAnswer] = useState(false);
   const [selectedValue, setSectedValue] = useState(null);
 
@@ -18,6 +23,7 @@ export const Step3 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
     setIsAnswer(isAnswer);
     if (isAnswer) {
       totalScoreHandler();
+      conservationScoreHandler();
     }
   };
 
