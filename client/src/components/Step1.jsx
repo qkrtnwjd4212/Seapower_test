@@ -4,13 +4,7 @@ import Container from "../UI/Container";
 import quizImg from "../assets/quiz1_3_img.png";
 import "../index.css";
 import Question from "../UI/Question";
-
-const QuestionContents = styled.div`
-  font-family: "Black Han Sans", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+import QuestionContents from "../UI/QuestionContents";
 
 export const Step1 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
   const [isAnswer, setIsAnswer] = useState(false);
