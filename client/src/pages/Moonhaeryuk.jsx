@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
-import { Step1, Step2, Step3 } from "../components";
+import { Step1, MainPage, Header } from "../components";
 
 export const Moonhaeryuk = () => {
   const [step, setStep] = useState(0);
@@ -21,7 +21,7 @@ export const Moonhaeryuk = () => {
 
   return (
     <Fragment>
-      <div style={{ backgroundColor: "lightyellow", height: "100vh" }}>
+      <div style={{ backgroundColor: "white", height: "100vh" }}>
         <div
           style={{
             height: "100%",
@@ -30,7 +30,8 @@ export const Moonhaeryuk = () => {
             justifyContent: "space-between",
           }}
         >
-          {step === 0 ? <div>메인페이지</div> : ""}
+          <Header />
+          {step === 0 ? <MainPage /> : ""}
           {step === 1 ? (
             <Step1
               totalScoreHandler={totalScoreHandler}
