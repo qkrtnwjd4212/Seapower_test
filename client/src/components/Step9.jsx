@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import Container from "../UI/Container";
-import quizImg from "../assets/quiz1_3_img.png";
+import quizImg from "../assets/quiz8_10_img.png";
 import "../index.css";
 import Question from "../UI/Question";
 import QuestionContents from "../UI/QuestionContents";
