@@ -12,7 +12,7 @@ const HeaderCss = styled.div`
   font-family: "Song Myung";
   font-size: 3.5vh;
   color: white;
-
+  
   @media (min-width: 800px) {
     width: 30vw;
   }

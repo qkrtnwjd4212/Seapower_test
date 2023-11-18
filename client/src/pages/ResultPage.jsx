@@ -5,7 +5,7 @@ export const ResultPage = () => {
   return (
     <Fragment>
       <Result1 />
-      <div>결과 페이지</div>
+      {/* <div>결과 페이지</div> */}
 
     </Fragment>
   );
