@@ -12,6 +12,13 @@ import {
   Step9,
   Step10,
 } from "../../src";
+import { ResultPage } from "../pages/ResultPage";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+const Button = styled(Link)`
+  cursor: pointer;
+`;
 
 export const Moonhaeryuk = () => {
   const [step, setStep] = useState(0);
@@ -25,6 +32,7 @@ export const Moonhaeryuk = () => {
 
   const totalScoreHandler = () => {
     setTotalScore((prev) => prev + 1);
+    console.log(totalScore);
   };
 
   useEffect(() => {
@@ -116,13 +124,20 @@ export const Moonhaeryuk = () => {
           ) : (
             ""
           )}
+          {/* {step === 11 ? <ResultPage totalScore={totalScore} /> : ""} */}
 
-          <button
-            onClick={onClickNextButton}
-            disabled={step !== 0 && !isSelect}
-          >
-            {step === 0 ? "시작" : step === 10 ? "결과보기" : "다음"}
-          </button>
+          {step < 10 ? (
+            <button
+              onClick={onClickNextButton}
+              disabled={step !== 0 && !isSelect}
+            >
+              {step === 0 ? "시작" : "다음"}
+            </button>
+          ) : step === 10 ? (
+            <Button to="/result/1">결과보기</Button>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </Fragment>

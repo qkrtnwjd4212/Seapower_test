@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Moonhaeryuk />} />
-        <Route path="/result" element={<ResultPage />} />
+        <Route path="/result/:id" element={<ResultPage />} />
 
         <Route path="/*" element={<NotFound />} />
       </Routes>

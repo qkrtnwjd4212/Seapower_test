@@ -22,7 +22,7 @@ export const Step2 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
 
   return (
     <Fragment>
-      1번문제
+      2번문제
       <div
         style={{
           display: "flex",
