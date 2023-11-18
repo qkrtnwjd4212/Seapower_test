@@ -46,7 +46,9 @@ export const Step5 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
               alignItems: "center",
             }}
           >
-            1번. 내일 점심!!
+            산호는 해양 생태계를 풍성하게 만드는 중요한 생물으로 ‘바다의
+            열대우림’이라고도 불립니다. 산호에 대한 설명으로 옳지 않은 것은
+            무엇일까요?
           </div>
           <Question
             style={{
@@ -55,7 +57,9 @@ export const Step5 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
-            <QuestionContents>짜장면</QuestionContents>
+            <QuestionContents>
+              바다생물의 25%가 산호에 의존해 살고 있다
+            </QuestionContents>
           </Question>
           <Question
             style={{
@@ -63,7 +67,7 @@ export const Step5 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
-            <QuestionContents>부대찌개ㅔ</QuestionContents>
+            <QuestionContents>산호는 해양에 서식하는 식물이다</QuestionContents>
           </Question>
           <Question
             style={{
@@ -72,7 +76,7 @@ export const Step5 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(3)}
           >
-            <QuestionContents>돼지국밥</QuestionContents>
+            <QuestionContents>대부분의 산호는 투명하다</QuestionContents>
           </Question>
           <Question
             style={{
@@ -81,7 +85,7 @@ export const Step5 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(4)}
           >
-            <QuestionContents>콘푸로스트</QuestionContents>
+            <QuestionContents>산호는 동물 중 수명이 제일 길다</QuestionContents>
           </Question>
           {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
         </div>

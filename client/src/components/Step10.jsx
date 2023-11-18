@@ -46,7 +46,10 @@ export const Step10 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
               alignItems: "center",
             }}
           >
-            1번. 내일 점심!!
+            블루카본이란 바다와 해양 생태계에 의해 흡수되는 탄소 및 흡수원으로
+            블루카본의 탄소 흡수량은 육상의 식물보다 50배 가량 많다고 합니다.
+            우리나라의 갯벌은 매년 26~49만톤의 탄소를 흡수합니다. 갯벌은 IPCC에
+            의해 블루카본으로 인정받았을까요?
           </div>
           <Question
             style={{
@@ -55,7 +58,7 @@ export const Step10 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
-            <QuestionContents>짜장면</QuestionContents>
+            <QuestionContents>O</QuestionContents>
           </Question>
           <Question
             style={{
@@ -63,26 +66,9 @@ export const Step10 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
-            <QuestionContents>부대찌개ㅔ</QuestionContents>
+            <QuestionContents>X</QuestionContents>
           </Question>
-          <Question
-            style={{
-              backgroundColor:
-                selectedValue === 3 ? "red" : "var(--bright-blue)",
-            }}
-            onClick={isSelect ? nonEvent : () => onClick(3)}
-          >
-            <QuestionContents>돼지국밥</QuestionContents>
-          </Question>
-          <Question
-            style={{
-              backgroundColor:
-                selectedValue === 4 ? "red" : "var(--bright-blue)",
-            }}
-            onClick={isSelect ? nonEvent : () => onClick(4)}
-          >
-            <QuestionContents>콘푸로스트</QuestionContents>
-          </Question>
+
           {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
         </div>
       </Container>

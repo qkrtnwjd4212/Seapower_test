@@ -9,7 +9,7 @@ export const Step4 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
   const [isAnswer, setIsAnswer] = useState(false);
   const [selectedValue, setSectedValue] = useState(null);
 
-  const answer = 2;
+  const answer = 4;
 
   const onClick = (value) => {
     setIsSelect((prev) => !prev);
@@ -46,7 +46,8 @@ export const Step4 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
               alignItems: "center",
             }}
           >
-            1번. 내일 점심!!
+            소설 '모비 딕'에 등장하는 어종으로, 육식동물로서는 손에 꼽힐 정도로
+            거대한 어종은 무엇일까요?
           </div>
           <Question
             style={{
@@ -55,15 +56,15 @@ export const Step4 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
-            <QuestionContents>짜장면</QuestionContents>
+            <QuestionContents>돌고래</QuestionContents>
           </Question>
           <Question
             style={{
-              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
+              backgroundColor: isSelect ? "red" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
-            <QuestionContents>부대찌개ㅔ</QuestionContents>
+            <QuestionContents>범고래</QuestionContents>
           </Question>
           <Question
             style={{
@@ -72,16 +73,16 @@ export const Step4 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(3)}
           >
-            <QuestionContents>돼지국밥</QuestionContents>
+            <QuestionContents>망치고래</QuestionContents>
           </Question>
           <Question
             style={{
               backgroundColor:
-                selectedValue === 4 ? "red" : "var(--bright-blue)",
+                selectedValue === 4 ? "green" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(4)}
           >
-            <QuestionContents>콘푸로스트</QuestionContents>
+            <QuestionContents>향유고래</QuestionContents>
           </Question>
           {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
         </div>

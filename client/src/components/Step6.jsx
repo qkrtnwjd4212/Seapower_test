@@ -9,7 +9,7 @@ export const Step6 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
   const [isAnswer, setIsAnswer] = useState(false);
   const [selectedValue, setSectedValue] = useState(null);
 
-  const answer = 2;
+  const answer = 4;
 
   const onClick = (value) => {
     setIsSelect((prev) => !prev);
@@ -46,7 +46,8 @@ export const Step6 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
               alignItems: "center",
             }}
           >
-            1번. 내일 점심!!
+            맷돌 같은 피부를 가지고 있고 항생 물질로 다른 물고기의 상처를
+            치료해주는 물고기는 무엇일까요?
           </div>
           <Question
             style={{
@@ -55,15 +56,15 @@ export const Step6 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
-            <QuestionContents>짜장면</QuestionContents>
+            <QuestionContents>피라냐</QuestionContents>
           </Question>
           <Question
             style={{
-              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
+              backgroundColor: isSelect ? "red" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
-            <QuestionContents>부대찌개ㅔ</QuestionContents>
+            <QuestionContents>연어</QuestionContents>
           </Question>
           <Question
             style={{
@@ -72,16 +73,16 @@ export const Step6 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(3)}
           >
-            <QuestionContents>돼지국밥</QuestionContents>
+            <QuestionContents>닥터피쉬</QuestionContents>
           </Question>
           <Question
             style={{
               backgroundColor:
-                selectedValue === 4 ? "red" : "var(--bright-blue)",
+                selectedValue === 4 ? "green" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(4)}
           >
-            <QuestionContents>콘푸로스트</QuestionContents>
+            <QuestionContents>개복치</QuestionContents>
           </Question>
           {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
         </div>

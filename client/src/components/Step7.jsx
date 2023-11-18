@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import Container from "../UI/Container";
-import quizImg from "../assets/quiz4_7_img.png";
+import quizImg from "../assets/gangchiquiz.png";
 import "../index.css";
 import Question from "../UI/Question";
 import QuestionContents from "../UI/QuestionContents";
@@ -9,7 +9,7 @@ export const Step7 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
   const [isAnswer, setIsAnswer] = useState(false);
   const [selectedValue, setSectedValue] = useState(null);
 
-  const answer = 2;
+  const answer = 3;
 
   const onClick = (value) => {
     setIsSelect((prev) => !prev);
@@ -46,7 +46,7 @@ export const Step7 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
               alignItems: "center",
             }}
           >
-            1번. 내일 점심!!
+            다음 사진은 어떤 생물 종을 나타내고 있을까요?
           </div>
           <Question
             style={{
@@ -55,24 +55,24 @@ export const Step7 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
-            <QuestionContents>짜장면</QuestionContents>
+            <QuestionContents>물범</QuestionContents>
           </Question>
           <Question
             style={{
-              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
+              backgroundColor: isSelect ? "red" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
-            <QuestionContents>부대찌개ㅔ</QuestionContents>
+            <QuestionContents>물개</QuestionContents>
           </Question>
           <Question
             style={{
               backgroundColor:
-                selectedValue === 3 ? "red" : "var(--bright-blue)",
+                selectedValue === 3 ? "green" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(3)}
           >
-            <QuestionContents>돼지국밥</QuestionContents>
+            <QuestionContents>바다사자(강치)</QuestionContents>
           </Question>
           <Question
             style={{
@@ -81,7 +81,7 @@ export const Step7 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(4)}
           >
-            <QuestionContents>콘푸로스트</QuestionContents>
+            <QuestionContents>바다코끼리</QuestionContents>
           </Question>
           {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
         </div>

@@ -46,7 +46,9 @@ export const Step8 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
               alignItems: "center",
             }}
           >
-            1번. 내일 점심!!
+            육상 생태계의 먹이 사슬은 식물과 초식 동물, 포식 동물의 세 단계가
+            기본적으로 굉장히 단순합니다. 해양 생태계의 먹이 사슬도 육상
+            생태계와 동일할까요?
           </div>
           <Question
             style={{
@@ -55,7 +57,7 @@ export const Step8 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
-            <QuestionContents>짜장면</QuestionContents>
+            <QuestionContents>O</QuestionContents>
           </Question>
           <Question
             style={{
@@ -63,26 +65,9 @@ export const Step8 = ({ totalScoreHandler, setIsSelect, isSelect }) => {
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
-            <QuestionContents>부대찌개ㅔ</QuestionContents>
+            <QuestionContents>X</QuestionContents>
           </Question>
-          <Question
-            style={{
-              backgroundColor:
-                selectedValue === 3 ? "red" : "var(--bright-blue)",
-            }}
-            onClick={isSelect ? nonEvent : () => onClick(3)}
-          >
-            <QuestionContents>돼지국밥</QuestionContents>
-          </Question>
-          <Question
-            style={{
-              backgroundColor:
-                selectedValue === 4 ? "red" : "var(--bright-blue)",
-            }}
-            onClick={isSelect ? nonEvent : () => onClick(4)}
-          >
-            <QuestionContents>콘푸로스트</QuestionContents>
-          </Question>
+
           {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
         </div>
       </Container>
