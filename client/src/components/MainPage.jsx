@@ -3,6 +3,7 @@ import MainPageWave from "../assets/MainPageWave.png";
 import styled from "styled-components";
 
 const Container = styled.div`
+  margin: 0;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -18,7 +19,7 @@ export const MainPage = () => {
           <img
             src={MainPageWave}
             alt="WaveImage"
-            style={{ width: "100vw", height: "80vh" }}
+            style={{ width: "100vw", height: "75vh" }}
           />
         </Container>
       </div>
