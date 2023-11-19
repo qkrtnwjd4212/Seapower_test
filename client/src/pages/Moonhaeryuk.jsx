@@ -200,10 +200,10 @@ export const Moonhaeryuk = () => {
               ""
             )}
             {/* {step === 11 ? <ResultPage totalScore={totalScore} /> : ""} */}
-
             {step < 10 ? (
               <button
                 style={{
+                  width: "85vw",
                   margin: "3vh",
                   height: "5vh",
                   borderRadius: "10px",
