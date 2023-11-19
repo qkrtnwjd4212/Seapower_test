@@ -46,7 +46,7 @@ export const Step1 = ({
             gap: 10,
           }}
         >
-          <img src={quizImg} style={{ height: "25vh" }} />
+          <img src={quizImg} style={{ height: "25vh", margin: "3vh" }} />
           <Quiz>
             해양쓰레기 중 가장 높은 비율을 차지하는 쓰레기는 무엇일까요?
           </Quiz>

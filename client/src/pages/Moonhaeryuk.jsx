@@ -204,6 +204,7 @@ export const Moonhaeryuk = () => {
             {step < 10 ? (
               <button
                 style={{
+                  margin: "3vh",
                   height: "5vh",
                   borderRadius: "10px",
                   backgroundColor: "var(--light-sand)",

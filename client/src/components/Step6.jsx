@@ -46,7 +46,7 @@ export const Step6 = ({
             gap: 10,
           }}
         >
-          <img src={quizImg} style={{ height: "25vh" }} />
+          <img src={quizImg} style={{ height: "25vh", margin: "3vh" }} />
           <Quiz>
             맷돌 같은 피부를 가지고 있고 항생 물질로 다른 물고기의 상처를
             치료해주는 물고기는 무엇일까요?

@@ -46,7 +46,7 @@ export const Step3 = ({
             gap: 10,
           }}
         >
-          <img src={quizImg} style={{ height: "25vh" }} />
+          <img src={quizImg} style={{ height: "25vh", margin: "3vh" }} />
           <Quiz>
             선크림에 들어있는 옥시벤존, 옥티녹세이트는 산호의 ____을 일으켜 해양
             생태계에 악영향을 끼칩니다. 산호가 수온의 급격한 변화로 하얗게

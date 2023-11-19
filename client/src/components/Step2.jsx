@@ -48,7 +48,7 @@ export const Step2 = ({
             gap: 10,
           }}
         >
-          <img src={quizImg} style={{ height: "25vh" }} />
+          <img src={quizImg} style={{ height: "25vh", margin: "3vh" }} />
           <Quiz>바다에서 가장 많이 버려지는 쓰레기는 무엇일까요?</Quiz>
           <Question
             style={{

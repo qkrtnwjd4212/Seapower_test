@@ -46,7 +46,7 @@ export const Step9 = ({
             gap: 10,
           }}
         >
-          <img src={quizImg} style={{ height: "25vh" }} />
+          <img src={quizImg} style={{ height: "25vh", margin: "3vh" }} />
           <Quiz style={{ flexDirection: "column" }}>
             다음에서 설명하는 해양오염 현상은 무엇입니까?
             <div style={{ color: "red" }}>

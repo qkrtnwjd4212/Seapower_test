@@ -46,7 +46,7 @@ export const Step5 = ({
             gap: 10,
           }}
         >
-          <img src={quizImg} style={{ height: "25vh" }} />
+          <img src={quizImg} style={{ height: "25vh", margin: "3vh" }} />
           <Quiz>
             산호는 해양 생태계를 풍성하게 만드는 중요한 생물으로 ‘바다의
             열대우림’이라고도 불립니다. 산호에 대한 설명으로 옳지 않은 것은
