@@ -46,7 +46,7 @@ export const Result1 = () => {
                     alt="malmijal_img"
                 />
                 <DetailBox>
-                    결과결과어쩌구어쩌구
+                바다와 친하지 않은 당신, 유사벌레붙이말미잘과 친해져 보는 것은 어떨까요? 유사벌레붙이말미잘은 30년 만에 인천 바다에서 확인된 종입니다. 긴 원통형의 몸체와 촉수다발을 가지고 있습니다. 조간대의 모래 진흙 갯벌에 몸체를 박고 살아갑니다. 한국 해역에서 처음으로 보고된 종입니다. 한반도 고유종으로 개체 수가 많지 않은 종이에요. 유사벌레붙이 말미잘이 살아가는 해역의 쓰레기 현황을 확인해볼까요?
                 </DetailBox>
 
                 <TitleText>유사벌레붙이말미잘이 살고 있는 바다는 지금...</TitleText>
@@ -69,8 +69,8 @@ export const Result1 = () => {
 
                 <ShareBtn onClick={() =>
                     handleKaKaoShareBtn({
-                        description: '저는 유사벌레붙이말미잘이 나왔어요!',
-                        imageUrl: { Malmijal },
+                        FRIENDS: '저는 유사벌레붙이말미잘이 나왔어요!',
+                        THUMB: 'https://ifh.cc/g/1jt2Dm.png',
                     })
                 }
                 >공유하기</ShareBtn>
