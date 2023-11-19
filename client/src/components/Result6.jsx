@@ -12,6 +12,8 @@ import Plastic from "../assets/plastic.png";
 import Wood from "../assets/wood.png";
 import Glass from "../assets/glass.png";
 import Metal from "../assets/metal.png";
+import { Link } from "react-router-dom";
+import Westsea from "../assets/westsea.png";
 
 const { kakao } = window;
 
@@ -24,21 +26,33 @@ function Kakao() {
     };
     const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
 
-    const imageSrc = Plastic, imageSize = new kakao.maps.Size(40,40);
+    const imageSrc = Plastic,
+      imageSize = new kakao.maps.Size(40, 40);
     const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
-
 
     west_data.forEach((el) => {
       // 마커 이미지 선택
       let markerImage;
       if (el.종류 == "PL") {
-          markerImage = new kakao.maps.MarkerImage(Plastic, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Plastic,
+          new kakao.maps.Size(35, 35)
+        );
       } else if (el.종류 == "WD") {
-          markerImage = new kakao.maps.MarkerImage(Wood, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Wood,
+          new kakao.maps.Size(35, 35)
+        );
       } else if (el.종류 == "AU") {
-          markerImage = new kakao.maps.MarkerImage(Metal, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Metal,
+          new kakao.maps.Size(35, 35)
+        );
       } else if (el.종류 == "GL") {
-          markerImage = new kakao.maps.MarkerImage(Glass, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Glass,
+          new kakao.maps.Size(35, 35)
+        );
       }
 
       // 마커를 생성합니다
@@ -49,7 +63,7 @@ function Kakao() {
         position: new kakao.maps.LatLng(el.STR_LA, el.STR_LO),
         //마커에 hover시 나타날 title
         title: el.INVS_AREA_NM,
-        image: markerImage
+        image: markerImage,
       });
     });
   }, []);
@@ -77,13 +91,19 @@ export const Result6 = () => {
       <Container>
         <Header />
         <TitleText>
-          해양 생태 분야에 대한 많은 지식을 가진 당신, <br/> 다른 분야도 함께 알아봐요!
+          해양 생태 분야에 대한 많은 지식을 가진 당신, <br /> 다른 분야도 함께
+          알아봐요!
         </TitleText>
         <TitleBox>주홍도요</TitleBox>
         <ResultImg src={Doyo} alt="doyo_img" />
         <DetailBox>
-        해양 생태와 관련된 지식이 많은 당신! 주변에서 쉽게 관찰할 수 있고 수많은 종류를 가진 도요새와 잘 어울리시는군요! <br/> 그 중 주홍도요는 생김새와 특징이 다른 재미난 특징이 있는데요. 영어 명칭은 Purple sandpiper라고 하고, 한국 명칭은 주홍 도요이지만 실제로 깃털은 회색빛을 띈답니다.<br/> 알쏭달쏭하고 귀여운 매력을 가진 주홍도요가 살아가는 해역의 쓰레기 현황을 확인해볼까요?
-
+          해양 생태와 관련된 지식이 많은 당신! 주변에서 쉽게 관찰할 수 있고
+          수많은 종류를 가진 도요새와 잘 어울리시는군요! <br /> 그 중 주홍도요는
+          생김새와 특징이 다른 재미난 특징이 있는데요. 영어 명칭은 Purple
+          sandpiper라고 하고, 한국 명칭은 주홍 도요이지만 실제로 깃털은 회색빛을
+          띈답니다.
+          <br /> 알쏭달쏭하고 귀여운 매력을 가진 주홍도요가 살아가는 해역의
+          쓰레기 현황을 확인해볼까요?
         </DetailBox>
 
         <TitleText>주홍도요가 살고 있는 바다는 지금...</TitleText>
@@ -120,6 +140,9 @@ export const Result6 = () => {
         >
           내 결과 공유하기
         </ShareBtn>
+        <GoHome>
+          <HomeLink to="/">문제 다시 풀기</HomeLink>
+        </GoHome>
       </Container>
     </Wrapper>
   );
@@ -191,9 +214,9 @@ const TrashDetail = styled.div`
 `;
 
 const BoatImg = styled.img`
-width: 80%;
-height: 7%;
-margin-right: 10%;
+  width: 80%;
+  height: 7%;
+  margin-right: 10%;
 `;
 
 const ActivityContainer = styled.div`
@@ -210,6 +233,7 @@ const Item = styled.div`
 const ActivityImg = styled.img`
   width: 150px;
   height: 100px;
+  cursor: pointer;
 `;
 const ActivityText = styled.div`
   text-align: center;
@@ -225,7 +249,31 @@ const ShareBtn = styled.button`
   background: var(--light_sand, #ffeed9);
   display: flex;
   font-size: large;
-  margin: 20px 0 30px 0;
+  margin: 20px 0 20px 0;
   font-weight: 400;
   cursor: pointer;
+
+  width: 270px;
+`;
+
+const GoHome = styled.button`
+  padding: 7px 70px;
+  justify-content: center;
+  align-items: center;
+  /* gap: 10px; */
+  border-radius: 10px;
+  border: none;
+  background: var(--light_sand, #ffeed9);
+  display: flex;
+  font-size: large;
+  margin: 0 0 30px 0;
+  font-weight: 400;
+  cursor: pointer;
+
+  width: 270px;
+`;
+
+const HomeLink = styled(Link)`
+  text-decoration-line: none;
+  color: black;
 `;

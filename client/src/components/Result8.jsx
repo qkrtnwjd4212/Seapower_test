@@ -12,6 +12,7 @@ import Plastic from "../assets/plastic.png";
 import Wood from "../assets/wood.png";
 import Glass from "../assets/glass.png";
 import Metal from "../assets/metal.png";
+import { Link } from "react-router-dom";
 
 const { kakao } = window;
 
@@ -24,21 +25,33 @@ function Kakao() {
     };
     const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
 
-    const imageSrc = Plastic, imageSize = new kakao.maps.Size(40,40);
+    const imageSrc = Plastic,
+      imageSize = new kakao.maps.Size(40, 40);
     const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
-
 
     east_data.forEach((el) => {
       // 마커 이미지 선택
       let markerImage;
       if (el.종류 == "PL") {
-          markerImage = new kakao.maps.MarkerImage(Plastic, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Plastic,
+          new kakao.maps.Size(35, 35)
+        );
       } else if (el.종류 == "WD") {
-          markerImage = new kakao.maps.MarkerImage(Wood, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Wood,
+          new kakao.maps.Size(35, 35)
+        );
       } else if (el.종류 == "AU") {
-          markerImage = new kakao.maps.MarkerImage(Metal, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Metal,
+          new kakao.maps.Size(35, 35)
+        );
       } else if (el.종류 == "GL") {
-          markerImage = new kakao.maps.MarkerImage(Glass, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Glass,
+          new kakao.maps.Size(35, 35)
+        );
       }
 
       // 마커를 생성합니다
@@ -49,7 +62,7 @@ function Kakao() {
         position: new kakao.maps.LatLng(el.STR_LA, el.STR_LO),
         //마커에 hover시 나타날 title
         title: el.INVS_AREA_NM,
-        image: markerImage
+        image: markerImage,
       });
     });
   }, []);
@@ -77,14 +90,17 @@ export const Result8 = () => {
       <Container>
         <Header />
         <TitleText>
-          가장 고난이도의 문제를 맞추신 당신, <br/> 
+          가장 고난이도의 문제를 맞추신 당신, <br />
           해양 잘알이시군요!
         </TitleText>
         <TitleBox>강치</TitleBox>
         <ResultImg src={Gangchi} alt="gangchi_img" />
         <DetailBox>
-          바다와 친한 당신, 우리 바다의 멸종생물인 강치에 대해서도 잘 알고 있군요! <br /> 강치는 독도에 서식했던 바다사자를 말합니다. 원래 독도는 바다사자인 강치의 옛말을 따 가지도라 불릴 정도로 강치가 많았다고 해요. 안타깝게도 남획으로 강치는 1970년 이후 더 이상 발견되지 않고 있어요. <br /> 강치가 서식하던 해역의 쓰레기 현황을 확인해볼까요?
-
+          바다와 친한 당신, 우리 바다의 멸종생물인 강치에 대해서도 잘 알고
+          있군요! <br /> 강치는 독도에 서식했던 바다사자를 말합니다. 원래 독도는
+          바다사자인 강치의 옛말을 따 가지도라 불릴 정도로 강치가 많았다고 해요.
+          안타깝게도 남획으로 강치는 1970년 이후 더 이상 발견되지 않고 있어요.{" "}
+          <br /> 강치가 서식하던 해역의 쓰레기 현황을 확인해볼까요?
         </DetailBox>
 
         <TitleText>강치가 살았던 바다는 지금...</TitleText>
@@ -121,6 +137,9 @@ export const Result8 = () => {
         >
           내 결과 공유하기
         </ShareBtn>
+        <GoHome>
+          <HomeLink to="/">문제 다시 풀기</HomeLink>
+        </GoHome>
       </Container>
     </Wrapper>
   );
@@ -192,9 +211,9 @@ const TrashDetail = styled.div`
 `;
 
 const BoatImg = styled.img`
-width: 80%;
-height: 7%;
-margin-right: 10%;
+  width: 80%;
+  height: 7%;
+  margin-right: 10%;
 `;
 
 const ActivityContainer = styled.div`
@@ -226,7 +245,31 @@ const ShareBtn = styled.button`
   background: var(--light_sand, #ffeed9);
   display: flex;
   font-size: large;
-  margin: 20px 0 30px 0;
+  margin: 20px 0 20px 0;
   font-weight: 400;
   cursor: pointer;
+
+  width: 270px;
+`;
+
+const GoHome = styled.button`
+  padding: 7px 70px;
+  justify-content: center;
+  align-items: center;
+  /* gap: 10px; */
+  border-radius: 10px;
+  border: none;
+  background: var(--light_sand, #ffeed9);
+  display: flex;
+  font-size: large;
+  margin: 0 0 30px 0;
+  font-weight: 400;
+  cursor: pointer;
+
+  width: 270px;
+`;
+
+const HomeLink = styled(Link)`
+  text-decoration-line: none;
+  color: black;
 `;

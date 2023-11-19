@@ -12,6 +12,8 @@ import Plastic from "../assets/plastic.png";
 import Wood from "../assets/wood.png";
 import Glass from "../assets/glass.png";
 import Metal from "../assets/metal.png";
+import { Link } from "react-router-dom";
+import eastsea from "../assets/eastsea.png";
 
 const { kakao } = window;
 
@@ -24,21 +26,33 @@ function Kakao() {
     };
     const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
 
-    const imageSrc = Plastic, imageSize = new kakao.maps.Size(40,40);
+    const imageSrc = Plastic,
+      imageSize = new kakao.maps.Size(40, 40);
     const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
-
 
     east_data.forEach((el) => {
       // 마커 이미지 선택
       let markerImage;
       if (el.종류 == "PL") {
-          markerImage = new kakao.maps.MarkerImage(Plastic, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Plastic,
+          new kakao.maps.Size(35, 35)
+        );
       } else if (el.종류 == "WD") {
-          markerImage = new kakao.maps.MarkerImage(Wood, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Wood,
+          new kakao.maps.Size(35, 35)
+        );
       } else if (el.종류 == "AU") {
-          markerImage = new kakao.maps.MarkerImage(Metal, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Metal,
+          new kakao.maps.Size(35, 35)
+        );
       } else if (el.종류 == "GL") {
-          markerImage = new kakao.maps.MarkerImage(Glass, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Glass,
+          new kakao.maps.Size(35, 35)
+        );
       }
 
       // 마커를 생성합니다
@@ -49,7 +63,7 @@ function Kakao() {
         position: new kakao.maps.LatLng(el.STR_LA, el.STR_LO),
         //마커에 hover시 나타날 title
         title: el.INVS_AREA_NM,
-        image: markerImage
+        image: markerImage,
       });
     });
   }, []);
@@ -82,7 +96,13 @@ export const Result2 = () => {
         <TitleBox>불가사리</TitleBox>
         <ResultImg src={Bulga} alt="bulga_img" />
         <DetailBox>
-        바다와 친하지 않은 당신! 불가사리 이름의 유래를 아시나요? <br/> 불가사리라는 이름은 몸을 잘라내도 다시 재생되기 때문에 죽일 수 없다는 뜻의 불가살에서 유래했다고 합니다.<br/> 불가사리는  오염과 온도 변화에 강해 대부분의 바다에서 잘 살아간다고 하는데요, 불가사리를 시작으로 바다에 대해 더욱 관심을 가져보는 것은 어떨까요? 불가사리가 살아가는 해역의 쓰레기 현황을 확인해볼까요?
+          바다와 친하지 않은 당신! 불가사리 이름의 유래를 아시나요? <br />{" "}
+          불가사리라는 이름은 몸을 잘라내도 다시 재생되기 때문에 죽일 수 없다는
+          뜻의 불가살에서 유래했다고 합니다.
+          <br /> 불가사리는 오염과 온도 변화에 강해 대부분의 바다에서 잘
+          살아간다고 하는데요, 불가사리를 시작으로 바다에 대해 더욱 관심을
+          가져보는 것은 어떨까요? 불가사리가 살아가는 해역의 쓰레기 현황을
+          확인해볼까요?
         </DetailBox>
 
         <TitleText>불가사리가 살고 있는 바다는 지금...</TitleText>
@@ -107,7 +127,7 @@ export const Result2 = () => {
           </Item>
         </ActivityContainer>
 
-        <BoatImg src={Boat}/>
+        <BoatImg src={Boat} />
 
         <ShareBtn
           onClick={() =>
@@ -119,6 +139,9 @@ export const Result2 = () => {
         >
           내 결과 공유하기
         </ShareBtn>
+        <GoHome>
+          <HomeLink to="/">문제 다시 풀기</HomeLink>
+        </GoHome>
       </Container>
     </Wrapper>
   );
@@ -190,9 +213,9 @@ const TrashDetail = styled.div`
 `;
 
 const BoatImg = styled.img`
-width: 80%;
-height: 7%;
-margin-right: 10%;
+  width: 80%;
+  height: 7%;
+  margin-right: 10%;
 `;
 
 const ActivityContainer = styled.div`
@@ -209,6 +232,7 @@ const Item = styled.div`
 const ActivityImg = styled.img`
   width: 150px;
   height: 100px;
+  cursor: pointer;
 `;
 const ActivityText = styled.div`
   text-align: center;
@@ -224,7 +248,31 @@ const ShareBtn = styled.button`
   background: var(--light_sand, #ffeed9);
   display: flex;
   font-size: large;
-  margin: 20px 0 30px 0;
+  margin: 20px 0 20px 0;
   font-weight: 400;
   cursor: pointer;
+
+  width: 270px;
+`;
+
+const GoHome = styled.button`
+  padding: 7px 70px;
+  justify-content: center;
+  align-items: center;
+  /* gap: 10px; */
+  border-radius: 10px;
+  border: none;
+  background: var(--light_sand, #ffeed9);
+  display: flex;
+  font-size: large;
+  margin: 0 0 30px 0;
+  font-weight: 400;
+  cursor: pointer;
+
+  width: 270px;
+`;
+
+const HomeLink = styled(Link)`
+  text-decoration-line: none;
+  color: black;
 `;
