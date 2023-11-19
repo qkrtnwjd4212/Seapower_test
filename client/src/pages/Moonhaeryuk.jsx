@@ -219,19 +219,12 @@ export const Moonhaeryuk = () => {
             {/* {step === 11 ? <ResultPage totalScore={totalScore} /> : ""} */}
 
             {step < 10 ? (
-              <button
-                style={{
-                  width: "85vw",
-                  margin: "3vh",
-                  height: "5vh",
-                  borderRadius: "10px",
-                  backgroundColor: "var(--light-sand)",
-                }}
+              <StyledButton
                 onClick={onClickNextButton}
                 disabled={step !== 0 && !isSelect}
               >
                 {step === 0 ? "시작" : "다음"}
-              </button>
+              </StyledButton>
             ) : step === 10 ? (
               <>
                 {selectMarineLife()}
@@ -263,3 +256,17 @@ export const Moonhaeryuk = () => {
     </Fragment>
   );
 };
+
+const StyledButton = styled.button`
+  width: 70vw;
+  margin: 3vh;
+  height: 5vh;
+  border-radius: 10px;
+  background-color: var(--light-sand);
+  font-size: 20px;
+  padding: 0.5vh;
+
+  @media (min-width: 800px) {
+    width: 350px;
+  }
+`;

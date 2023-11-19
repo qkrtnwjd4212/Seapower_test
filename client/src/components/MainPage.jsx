@@ -4,7 +4,7 @@ import styled from "styled-components";
 import MainGIF from "../assets/maingif.gif";
 
 const Container = styled.div`
-  margin: 0;
+  margin: auto;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -16,11 +16,11 @@ const Container = styled.div`
 `;
 
 const GIFimg = styled.img`
-  width: 90vw;
+  width: 87vw;
   background-image: contain;
   z-index: 1;
   @media (min-width: 800px) {
-    width: 350px;
+    width: 330px;
   }
 
   position: absolute;
