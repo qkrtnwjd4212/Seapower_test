@@ -103,7 +103,10 @@ export const Result7 = () => {
 
         <TitleText>상괭이가 살고 있는 바다는 지금...</TitleText>
         <Kakao />
-        <TrashDetail>플라스틱 : 플라스틱 부표, 그물, 통발 등</TrashDetail>
+        <TrashDetail>상괭이가 살고 있는 서해안에는 현재 플라스틱 쓰레기 24566개, 목재 쓰레기 360개, 금속 쓰레기 332개, 유리 쓰레기 1250개가 존재합니다.</TrashDetail>
+
+        <TrashImg src={Westsea} />
+        <TrashDetail>최종 문구</TrashDetail>
 
         <TitleText>바다 캠페인 참여하기</TitleText>
         <ActivityContainer>
@@ -149,20 +152,24 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 100vw;
   @media (min-width: 800px) {
-    width: 400px;
+    width: 350px;
   }
   background: linear-gradient(to bottom, #ffffff 300px, #00b4d8 600px);
   max-width: 800px;
 `;
 
 const TitleText = styled.div`
-  margin-top: 30px;
+  margin-top: 6vh;
   text-align: center;
 `;
 
 const TitleBox = styled.div`
   padding: 10px;
-  width: 300px;
+
+  width: 90vw;
+  @media (min-width: 800px) {
+    width: 200px;
+  }
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -176,7 +183,10 @@ const TitleBox = styled.div`
 `;
 
 const ResultImg = styled.img`
-  width: 350px;
+  width: 90vw;
+  @media (min-width: 800px) {
+    width: 350px;
+  }
   margin-top: 50px;
   background-image: contain; // 이미지의 가로세로 비율을 유지하면서, 이미지가 잘리지 않을 때까지만 채운다.
   max-width: 500px;
@@ -186,32 +196,51 @@ const DetailBox = styled.div`
   border-radius: 10px;
   border: 1px solid #000;
   background: var(--light_sand, #ffeed9);
-  width: 320px;
-  //height: 500px;
-  margin: 50px 10px 50px 10px;
+  width: 85vw;
+  margin-top: 4vh;
+  margin-bottom: 3vh;
   border: none;
-  padding: 30px 20px 30px 20px;
+  padding: 4vw;
   text-align: left;
   line-height: 1.6;
-  font-size: 18px;
+  font-size: 16px;
+  @media (min-width: 800px) {
+    width: 250px;
+  }
 `;
 
 const TrashDetail = styled.div`
   border-radius: 10px;
   border: 1px solid #000;
   background: var(--light_sand, #ffeed9);
-  width: 300px;
-  height: 150px;
-  margin: 0 10px 50px 10px;
+
+  width: 85vw;
+  @media (min-width: 800px) {
+    width: 250px;
+  }
+  //margin-top: 1vh;
   border: none;
-  padding: 20px;
-  text-align: center;
+  padding: 4vw;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 16px;
 `;
 
 const BoatImg = styled.img`
   width: 80%;
   height: 7%;
   margin-right: 10%;
+`;
+
+const TrashImg = styled.img`
+  width: 80vw;
+  @media (min-width: 800px) {
+    width: 300px;
+  }
+  margin-top: 50px;
+  margin-bottom: 20px;
+  background-image: contain; // 이미지의 가로세로 비율을 유지하면서, 이미지가 잘리지 않을 때까지만 채운다.
+  max-width: 500px;
 `;
 
 const ActivityContainer = styled.div`

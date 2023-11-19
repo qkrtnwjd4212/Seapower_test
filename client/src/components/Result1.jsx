@@ -21,7 +21,7 @@ function Kakao() {
   useEffect(() => {
     const container = document.getElementById("map");
     const options = {
-      center: new kakao.maps.LatLng(35.600701, 126.570667), //지도의 중심좌표.
+      center: new kakao.maps.LatLng(36.500701, 126.570667), //지도의 중심좌표.
       level: 13, //지도의 레벨(확대, 축소 정도)
     };
     const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
@@ -108,9 +108,10 @@ export const Result1 = () => {
 
         <TitleText>유사벌레붙이말미잘이 살고 있는 바다는 지금...</TitleText>
         <Kakao />
-        <TrashDetail>플라스틱 : 플라스틱 부표, 그물, 통발 등</TrashDetail>
+        <TrashDetail>유사벌레붙이말미잘이 살고 있는 서해 중부에는 현재 플라스틱 쓰레기 24566개, 목재 쓰레기 360개, 금속 쓰레기 332개, 유리 쓰레기 1250개가 존재합니다.</TrashDetail>
 
         <TrashImg src={Westsea} />
+        <TrashDetail>최종멘트</TrashDetail>
 
         <TitleText>바다 캠페인 참여하기</TitleText>
         <ActivityContainer>
@@ -207,7 +208,7 @@ const DetailBox = styled.div`
   padding: 4vw;
   text-align: left;
   line-height: 1.6;
-  font-size: 18px;
+  font-size: 16px;
   @media (min-width: 800px) {
     width: 250px;
   }
@@ -222,11 +223,12 @@ const TrashDetail = styled.div`
   @media (min-width: 800px) {
     width: 250px;
   }
-  height: 100px;
-  margin-top: 2vh;
+  //margin-top: 1vh;
   border: none;
   padding: 4vw;
-  text-align: center;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 16px;
 `;
 
 const BoatImg = styled.img`
@@ -241,6 +243,7 @@ const TrashImg = styled.img`
     width: 300px;
   }
   margin-top: 50px;
+  margin-bottom: 20px;
   background-image: contain; // 이미지의 가로세로 비율을 유지하면서, 이미지가 잘리지 않을 때까지만 채운다.
   max-width: 500px;
 `;
