@@ -7,6 +7,11 @@ import React, { useEffect, Fragment } from "react";
 import Caresea from "../assets/caresea.png";
 import Oceancloud from "../assets/oceancloud.png";
 import { handleKaKaoShareBtn } from "../utils/kakaoShare";
+import { east_data } from "../data/east";
+import Plastic from "../assets/plastic.png";
+import Wood from "../assets/wood.png";
+import Glass from "../assets/glass.png";
+import Metal from "../assets/metal.png";
 
 const { kakao } = window;
 
@@ -14,10 +19,39 @@ function Kakao() {
   useEffect(() => {
     const container = document.getElementById("map");
     const options = {
-      center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-      level: 5, //지도의 레벨(확대, 축소 정도)
+      center: new kakao.maps.LatLng(35.800701, 128.870667), //지도의 중심좌표.
+      level: 12, //지도의 레벨(확대, 축소 정도)
     };
     const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+    const imageSrc = Plastic, imageSize = new kakao.maps.Size(40,40);
+    const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+
+    east_data.forEach((el) => {
+      // 마커 이미지 선택
+      let markerImage;
+      if (el.종류 == "PL") {
+          markerImage = new kakao.maps.MarkerImage(Plastic, new kakao.maps.Size(35,35));
+      } else if (el.종류 == "WD") {
+          markerImage = new kakao.maps.MarkerImage(Wood, new kakao.maps.Size(35,35));
+      } else if (el.종류 == "AU") {
+          markerImage = new kakao.maps.MarkerImage(Metal, new kakao.maps.Size(35,35));
+      } else if (el.종류 == "GL") {
+          markerImage = new kakao.maps.MarkerImage(Glass, new kakao.maps.Size(35,35));
+      }
+
+      // 마커를 생성합니다
+      new kakao.maps.Marker({
+        //마커가 표시 될 지도
+        map: map,
+        //마커가 표시 될 위치
+        position: new kakao.maps.LatLng(el.STR_LA, el.STR_LO),
+        //마커에 hover시 나타날 title
+        title: el.INVS_AREA_NM,
+        image: markerImage
+      });
+    });
   }, []);
 
   return (
