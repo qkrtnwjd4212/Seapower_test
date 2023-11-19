@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Container from "../UI/Container";
 import { Header } from "./Header";
 import Malmijal from "../assets/malmijal.png";
+import Boat from "../assets/boat.png";
 import React, { useEffect, Fragment } from "react";
 import Caresea from "../assets/caresea.png";
 import Oceancloud from "../assets/oceancloud.png";
@@ -79,6 +80,8 @@ export const Result1 = () => {
           </Item>
         </ActivityContainer>
 
+        <BoatImg src={Boat}/>
+
         <ShareBtn
           onClick={() =>
             handleKaKaoShareBtn({
@@ -87,7 +90,7 @@ export const Result1 = () => {
             })
           }
         >
-          공유하기
+          내 결과 공유하기
         </ShareBtn>
       </Container>
     </Wrapper>
@@ -102,7 +105,7 @@ const Wrapper = styled.div`
   @media (min-width: 800px) {
     width: 400px;
   }
-  background: linear-gradient(to bottom, #ffffff 400px, #00b4d8 600px);
+  background: linear-gradient(to bottom, #ffffff 370px, #00b4d8 600px);
   max-width: 800px;
 `;
 
@@ -112,7 +115,8 @@ const TitleText = styled.div`
 `;
 
 const TitleBox = styled.div`
-  padding: 10px 100px;
+  padding: 10px;
+  width: 300px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -126,7 +130,7 @@ const TitleBox = styled.div`
 `;
 
 const ResultImg = styled.img`
-  width: 90%;
+  width: 350px;
   margin-top: 50px;
   background-image: contain; // 이미지의 가로세로 비율을 유지하면서, 이미지가 잘리지 않을 때까지만 채운다.
   max-width: 500px;
@@ -156,6 +160,12 @@ const TrashDetail = styled.div`
   border: none;
   padding: 20px;
   text-align: center;
+`;
+
+const BoatImg = styled.img`
+width: 85%;
+height: 150px;
+filter: blur(0.5px);
 `;
 
 const ActivityContainer = styled.div`
