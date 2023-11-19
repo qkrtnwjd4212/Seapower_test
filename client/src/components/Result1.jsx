@@ -2,10 +2,10 @@ import styled from "styled-components";
 import Container from "../UI/Container";
 import { Header } from "./Header";
 import Malmijal from "../assets/malmijal.png";
-import React, { useEffect } from "react";
+import React, { useEffect, Fragment } from "react";
 import Caresea from "../assets/caresea.png";
 import Oceancloud from "../assets/oceancloud.png";
-import { useHistory } from 'react-router-dom';
+import { handleKaKaoShareBtn } from '../utils/kakaoShare';
 
 const { kakao } = window;
 
@@ -33,12 +33,12 @@ function Kakao() {
 export const Result1 = () => {
     const handleItemClick = (url) => {
         window.open(url, '_blank');
-      };
+    };
 
     return (
-        <>
-            <Header />
+        <Wrapper>
             <Container>
+            <Header />
                 <TitleText>아직은 바다와 친하지 않은 당신, 더 공부가 필요해요!</TitleText>
                 <TitleBox>유사벌레붙이말미잘</TitleBox>
                 <ResultImg
@@ -67,12 +67,24 @@ export const Result1 = () => {
                     </Item>
                 </ActivityContainer>
 
-                <ShareBtn>공유하기</ShareBtn>
+                <ShareBtn onClick={() =>
+                    handleKaKaoShareBtn({
+                        description: '저는 유사벌레붙이말미잘이 나왔어요!',
+                        imageUrl: { Malmijal },
+                    })
+                }
+                >공유하기</ShareBtn>
 
             </Container>
-        </>
+            </Wrapper>
     );
 };
+
+const Wrapper = styled.div`
+display: flex;
+justify-content: center;
+min-width: 500px;
+`;
 
 const TitleText = styled.div`
 margin-top: 30px;
@@ -94,9 +106,10 @@ const TitleBox = styled.div`
 `;
 
 const ResultImg = styled.img`
-  width: 80%;
-  height: 80%;
+  width: 90%;
   margin-top: 50px;
+  background-image: contain; // 이미지의 가로세로 비율을 유지하면서, 이미지가 잘리지 않을 때까지만 채운다.
+  max-width: 500px;
 `;
 
 const DetailBox = styled.div`
@@ -116,7 +129,7 @@ border-radius: 10px;
 border: 1px solid #000;
 background: var(--light_sand, #FFEED9);
 width: 300px;
-height: 200px;
+height: 150px;
 margin: 0 10px 50px 10px;
 border: none;
 padding: 20px;
