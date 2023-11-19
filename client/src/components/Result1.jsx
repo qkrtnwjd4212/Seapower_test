@@ -46,7 +46,7 @@ export const Result1 = () => {
                     alt="malmijal_img"
                 />
                 <DetailBox>
-                바다와 친하지 않은 당신, 유사벌레붙이말미잘과 친해져 보는 것은 어떨까요? 유사벌레붙이말미잘은 30년 만에 인천 바다에서 확인된 종입니다. 긴 원통형의 몸체와 촉수다발을 가지고 있습니다. 조간대의 모래 진흙 갯벌에 몸체를 박고 살아갑니다. 한국 해역에서 처음으로 보고된 종입니다. 한반도 고유종으로 개체 수가 많지 않은 종이에요. 유사벌레붙이 말미잘이 살아가는 해역의 쓰레기 현황을 확인해볼까요?
+                바다와 친하지 않은 당신, 유사벌레붙이말미잘과 친해져 보는 것은 어떨까요? <br/> 유사벌레붙이말미잘은 30년 만에 인천 바다에서 확인된 종입니다. 긴 원통형의 몸체와 촉수다발을 가지고 있습니다. 조간대의 모래 진흙 갯벌에 몸체를 박고 살아갑니다.<br/> 한국 해역에서 처음으로 보고된 종입니다. 한반도 고유종으로 개체 수가 많지 않은 종이에요.<br/> 유사벌레붙이 말미잘이 살아가는 해역의 쓰레기 현황을 확인해볼까요?
                 </DetailBox>
 
                 <TitleText>유사벌레붙이말미잘이 살고 있는 바다는 지금...</TitleText>
@@ -83,7 +83,9 @@ export const Result1 = () => {
 const Wrapper = styled.div`
 display: flex;
 justify-content: center;
-min-width: 500px;
+min-width: 400px;
+background: linear-gradient(to bottom, #FFFFFF 400px, #00B4D8 600px);
+max-width: 800px;
 `;
 
 const TitleText = styled.div`
@@ -100,9 +102,9 @@ const TitleBox = styled.div`
     border: none;
     background: var(--light_sand, #FFEED9);
     display: flex;
-    font-size: large;
+    font-size: 20px;
     margin: 10px 0 10px 0;
-    font-weight: 400;
+    font-weight: 600;
 `;
 
 const ResultImg = styled.img`
@@ -117,11 +119,13 @@ border-radius: 10px;
 border: 1px solid #000;
 background: var(--light_sand, #FFEED9);
 width: 320px;
-height: 500px;
+//height: 500px;
 margin: 50px 10px 50px 10px;
 border: none;
-padding: 20px;
-text-align: center;
+padding: 30px 20px 30px 20px;
+text-align: left;
+line-height: 1.6;
+font-size: 18px;
 `;
 
 const TrashDetail = styled.div`
@@ -165,6 +169,6 @@ padding: 7px 70px;
     background: var(--light_sand, #FFEED9);
     display: flex;
     font-size: large;
-    margin: 10px 0 10px 0;
+    margin: 20px 0 30px 0;
     font-weight: 400;
 `;
