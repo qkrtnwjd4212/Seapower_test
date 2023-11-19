@@ -95,7 +95,7 @@ export const Moonhaeryuk = () => {
   useEffect(() => {
     console.log(totalScore);
     if (num !== resultId) {
-      setResultId(num + 1);
+      setResultId(num);
     }
   }, [totalScore]);
 
