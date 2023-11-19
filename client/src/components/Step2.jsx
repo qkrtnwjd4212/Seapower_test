@@ -88,9 +88,9 @@ export const Step2 = ({
           {isSelect && (
             <Solution>
               {isAnswer ? (
-                <div style={{ color: "green" }}>"정답 ! "</div>
+                <div style={{ color: "green" }}>정답 !</div>
               ) : (
-                <div style={{ color: "red" }}>"오답 ! "</div>
+                <div style={{ color: "red" }}>오답 !</div>
               )}
               <div>바다에 가장 많이 버려지는 쓰레기는 담배꽁초입니다😵</div>
             </Solution>

@@ -88,9 +88,9 @@ export const Step1 = ({
           {isSelect && (
             <Solution>
               {isAnswer ? (
-                <div style={{ color: "green" }}>"정답 ! "</div>
+                <div style={{ color: "green" }}>정답 !</div>
               ) : (
-                <div style={{ color: "red" }}>"오답 ! "</div>
+                <div style={{ color: "red" }}>오답 !</div>
               )}
               <div>
                 해양쓰레기 중 가장 높은 비율을 차지하는 쓰레기는
