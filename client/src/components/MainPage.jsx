@@ -16,7 +16,7 @@ const Container = styled.div`
 `;
 
 const GIFimg = styled.img`
-  width: 87vw;
+  width: 86vw;
   background-image: contain;
   z-index: 1;
   @media (min-width: 800px) {
@@ -34,7 +34,7 @@ export const MainPage = () => {
     <Fragment>
       <div>
         <Container>
-          <GIFimg src={MainGIF} alt="loading" />
+          <GIFimg src={MainGIF} />
           <img
             src={MainPageWave}
             alt="WaveImage"

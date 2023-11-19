@@ -21,6 +21,7 @@ const Button = styled(Link)`
   color: black;
   text-decoration: none;
   cursor: pointer;
+  padding: 5px;
 `;
 
 export const Moonhaeryuk = () => {
@@ -265,6 +266,7 @@ const StyledButton = styled.button`
   background-color: var(--light-sand);
   font-size: 20px;
   padding: 0.5vh;
+  margin-bottom: 20px;
 
   @media (min-width: 800px) {
     width: 350px;
