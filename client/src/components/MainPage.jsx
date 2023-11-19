@@ -11,7 +11,7 @@ const Container = styled.div`
   @media (min-width: 800px) {
     width: 350px;
   }
-  
+
   position: relative;
 `;
 
@@ -26,7 +26,7 @@ const GIFimg = styled.img`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -25%);
+  transform: translate(-50%, -22%);
 `;
 
 export const MainPage = () => {
@@ -34,7 +34,7 @@ export const MainPage = () => {
     <Fragment>
       <div>
         <Container>
-        <GIFimg src={MainGIF} alt="loading" />
+          <GIFimg src={MainGIF} alt="loading" />
           <img
             src={MainPageWave}
             alt="WaveImage"

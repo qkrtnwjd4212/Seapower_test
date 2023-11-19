@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState, useRef } from "react";
 import MainPageWeb_v from "../UI/MainPageWeb_v";
 import "../index.css";
 import { MainPage, Header } from "../components";
@@ -33,10 +33,17 @@ export const Moonhaeryuk = () => {
   const [environmentScore, setEnvironmentScore] = useState(0); // 환경 점수
   const [easy, setEasy] = useState(false); // 담배꽁초 문제
   const [bonus, setBonus] = useState(false); // 보너스 문제
+  const [resultId, setResultId] = useState(0);
+  // const resultId = useRef(0);
+  // const [navigateToResult, setNavigateToResult] = useState(false);
 
   const onClickNextButton = () => {
     setStep((prev) => prev + 1);
     setIsSelect(false);
+  };
+
+  const onClickLast = () => {
+    selectMarineLife();
   };
 
   const totalScoreHandler = () => {
@@ -57,47 +64,57 @@ export const Moonhaeryuk = () => {
     console.log(environmentScore);
   };
 
-  const [resultId, setResultId] = useState(0);
-  let num;
+  const num = useRef(0);
   const selectMarineLife = () => {
     if (totalScore >= 0 && totalScore <= 3) {
-      if (easy === true) num = 1; // 불가사리
-      else num = 0; // 말미잘
+      if (easy === true) num.current = 2; // 불가사리
+      else num.current = 1; // 말미잘
     } else if (totalScore >= 4 && totalScore <= 6) {
       if (
         conservationScore === ecologyScore &&
         ecologyScore === environmentScore
       )
-        num = 2; // 해마
+        num.current = 3; // 해마
       else if (
         conservationScore > ecologyScore &&
         conservationScore > environmentScore
       )
-        num = 3; // 해파리
+        num.current = 4; // 해파리
       else if (
         environmentScore > conservationScore &&
         environmentScore > ecologyScore
       )
-        num = 4; // 남방방게
+        num.current = 5; // 남방방게
       else if (
         ecologyScore > environmentScore &&
         ecologyScore > conservationScore
       )
-        num = 5; // 주황도요
+        num.current = 6; // 주황도요
     } else if (totalScore >= 7) {
-      if (bonus == true) num = 7; // 강치
-      else num = 6; // 상괭이
+      if (bonus == true) num.current = 8; // 강치
+      else num.current = 7; // 상괭이
     }
 
-    num += 1;
+    // num += 1;
   };
 
   useEffect(() => {
-    console.log(totalScore);
-    if (num !== resultId) {
-      setResultId(num);
-    }
-  }, [totalScore]);
+    selectMarineLife();
+
+    if (step === 10) setResultId(num.current);
+    // setResultId(num);
+    console.log("re : ", totalScore);
+  }, [totalScore, isSelect]);
+
+  useEffect(() => {
+    setResultId(num.current);
+  }, [num]);
+
+  useEffect(() => {
+    if (step === 0) num.current = 0;
+  }, [step]);
+
+  console.log("출력 ", totalScore, resultId, num);
 
   return (
     <Fragment>
@@ -204,6 +221,7 @@ export const Moonhaeryuk = () => {
             {step < 10 ? (
               <button
                 style={{
+                  width: "85vw",
                   margin: "3vh",
                   height: "5vh",
                   borderRadius: "10px",
@@ -223,6 +241,7 @@ export const Moonhaeryuk = () => {
                     borderRadius: "10px",
                     backgroundColor: "var(--light-sand)",
                   }}
+                  onClick={onClickLast}
                 >
                   <Button
                     style={{

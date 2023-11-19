@@ -132,7 +132,7 @@ const Wrapper = styled.div`
   @media (min-width: 800px) {
     width: 400px;
   }
-  background: linear-gradient(to bottom, #ffffff 370px, #00b4d8 600px);
+  background: linear-gradient(to bottom, #ffffff 300px, #00b4d8 600px);
   max-width: 800px;
 `;
 
