@@ -46,7 +46,7 @@ export const Step9 = ({
           }}
         >
           <img src={quizImg} style={{ height: "25vh" }} />
-          <Quiz>
+          <Quiz style={{ flexDirection: "column" }}>
             다음에서 설명하는 해양오염 현상은 무엇입니까?
             <div style={{ color: "red" }}>
               물속에 질소나 인이 많아 플랑크톤의 영양분이 많아지는 현상

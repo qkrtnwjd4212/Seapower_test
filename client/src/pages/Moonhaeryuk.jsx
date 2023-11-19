@@ -204,7 +204,12 @@ export const Moonhaeryuk = () => {
           ) : step === 10 ? (
             <>
               {selectMarineLife()}
-              <Button to={`/result/${resultId}`}>결과보기</Button>
+              <Button
+                style={{ display: "flex", justifyContent: "center" }}
+                to={`/result/${resultId}`}
+              >
+                결과보기
+              </Button>
             </>
           ) : (
             ""
