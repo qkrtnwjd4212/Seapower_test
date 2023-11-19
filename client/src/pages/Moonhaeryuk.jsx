@@ -54,9 +54,8 @@ export const Moonhaeryuk = () => {
   };
 
   const [resultId, setResultId] = useState(0);
+  let num;
   const selectMarineLife = () => {
-    let num;
-
     if (totalScore >= 0 && totalScore <= 3) {
       if (easy === true) num = 1; // 불가사리
       else num = 0; // 말미잘
@@ -86,13 +85,14 @@ export const Moonhaeryuk = () => {
       else num = 6; // 상괭이
     }
 
-    if (num !== resultId) {
-      setResultId(num + 1);
-    }
+    num += 1;
   };
 
   useEffect(() => {
     console.log(totalScore);
+    if (num !== resultId) {
+      setResultId(num + 1);
+    }
   }, [totalScore]);
 
   return (
