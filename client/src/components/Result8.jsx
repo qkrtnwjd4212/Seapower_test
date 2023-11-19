@@ -87,7 +87,7 @@ export const Result8 = () => {
 
         </DetailBox>
 
-        <TitleText>강치가 살고 있는 바다는 지금...</TitleText>
+        <TitleText>강치가 살았던 바다는 지금...</TitleText>
         <Kakao />
         <TrashDetail>플라스틱 : 플라스틱 부표, 그물, 통발 등</TrashDetail>
 
