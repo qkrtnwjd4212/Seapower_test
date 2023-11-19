@@ -12,6 +12,7 @@ import Plastic from "../assets/plastic.png";
 import Wood from "../assets/wood.png";
 import Glass from "../assets/glass.png";
 import Metal from "../assets/metal.png";
+import Westsea from "../assets/westsea.png";
 
 const { kakao } = window;
 
@@ -96,6 +97,8 @@ export const Result1 = () => {
         <TitleText>유사벌레붙이말미잘이 살고 있는 바다는 지금...</TitleText>
         <Kakao />
         <TrashDetail>플라스틱 : 플라스틱 부표, 그물, 통발 등</TrashDetail>
+
+        <TrashImg src={Westsea}/>
 
         <TitleText>바다 캠페인 참여하기</TitleText>
         <ActivityContainer>
@@ -184,6 +187,7 @@ const DetailBox = styled.div`
   background: var(--light_sand, #ffeed9);
   width: 85vw;
   margin-top: 4vh;
+  margin-bottom: 3vh;
   border: none;
   padding: 4vw;
   text-align: left;
@@ -203,8 +207,8 @@ const TrashDetail = styled.div`
   @media (min-width: 800px) {
     width: 250px;
   }
-  height: 150px;
-  margin-top: 4vh;
+  height: 100px;
+  margin-top: 2vh;
   border: none;
   padding: 4vw;
   text-align: center;
@@ -214,6 +218,16 @@ const BoatImg = styled.img`
 width: 80%;
 height: 7%;
 margin-right: 10%;
+`;
+
+const TrashImg = styled.img`
+  width: 80vw;
+  @media (min-width: 800px) {
+    width: 300px;
+  }
+  margin-top: 50px;
+  background-image: contain; // 이미지의 가로세로 비율을 유지하면서, 이미지가 잘리지 않을 때까지만 채운다.
+  max-width: 500px;
 `;
 
 const ActivityContainer = styled.div`
