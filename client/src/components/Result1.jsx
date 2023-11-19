@@ -12,61 +12,74 @@ import Plastic from "../assets/plastic.png";
 import Wood from "../assets/wood.png";
 import Glass from "../assets/glass.png";
 import Metal from "../assets/metal.png";
+import Westsea from "../assets/westsea.png";
+import { Link } from "react-router-dom";
 
 const { kakao } = window;
 
 function Kakao() {
-    useEffect(() => {
-      const container = document.getElementById("map");
-      const options = {
-        center: new kakao.maps.LatLng(35.600701, 126.570667), //지도의 중심좌표.
-        level: 13, //지도의 레벨(확대, 축소 정도)
-      };
-      const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
-  
-      const imageSrc = Plastic, imageSize = new kakao.maps.Size(40,40);
-      const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+  useEffect(() => {
+    const container = document.getElementById("map");
+    const options = {
+      center: new kakao.maps.LatLng(36.500701, 126.570667), //지도의 중심좌표.
+      level: 13, //지도의 레벨(확대, 축소 정도)
+    };
+    const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
 
+    const imageSrc = Plastic,
+      imageSize = new kakao.maps.Size(40, 40);
+    const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
 
-      west_data.forEach((el) => {
-        // 마커 이미지 선택
-        let markerImage;
-        if (el.종류 == "PL") {
-            markerImage = new kakao.maps.MarkerImage(Plastic, new kakao.maps.Size(35,35));
-        } else if (el.종류 == "WD") {
-            markerImage = new kakao.maps.MarkerImage(Wood, new kakao.maps.Size(35,35));
-        } else if (el.종류 == "AU") {
-            markerImage = new kakao.maps.MarkerImage(Metal, new kakao.maps.Size(35,35));
-        } else if (el.종류 == "GL") {
-            markerImage = new kakao.maps.MarkerImage(Glass, new kakao.maps.Size(35,35));
-        }
+    west_data.forEach((el) => {
+      // 마커 이미지 선택
+      let markerImage;
+      if (el.종류 == "PL") {
+        markerImage = new kakao.maps.MarkerImage(
+          Plastic,
+          new kakao.maps.Size(35, 35)
+        );
+      } else if (el.종류 == "WD") {
+        markerImage = new kakao.maps.MarkerImage(
+          Wood,
+          new kakao.maps.Size(35, 35)
+        );
+      } else if (el.종류 == "AU") {
+        markerImage = new kakao.maps.MarkerImage(
+          Metal,
+          new kakao.maps.Size(35, 35)
+        );
+      } else if (el.종류 == "GL") {
+        markerImage = new kakao.maps.MarkerImage(
+          Glass,
+          new kakao.maps.Size(35, 35)
+        );
+      }
 
-        // 마커를 생성합니다
-        new kakao.maps.Marker({
-          //마커가 표시 될 지도
-          map: map,
-          //마커가 표시 될 위치
-          position: new kakao.maps.LatLng(el.STR_LA, el.STR_LO),
-          //마커에 hover시 나타날 title
-          title: el.INVS_AREA_NM,
-          image: markerImage
-        });
+      // 마커를 생성합니다
+      new kakao.maps.Marker({
+        //마커가 표시 될 지도
+        map: map,
+        //마커가 표시 될 위치
+        position: new kakao.maps.LatLng(el.STR_LA, el.STR_LO),
+        //마커에 hover시 나타날 title
+        title: el.INVS_AREA_NM,
+        image: markerImage,
       });
-    }, []);
-  
-    return (
-      <div
-        id="map"
-        style={{
-          width: "300px",
-          height: "300px",
-          marginTop: "10px",
-          marginBottom: "30px",
-        }}
-      ></div>
-    );
-  }
-  
+    });
+  }, []);
+
+  return (
+    <div
+      id="map"
+      style={{
+        width: "300px",
+        height: "300px",
+        marginTop: "10px",
+        marginBottom: "30px",
+      }}
+    ></div>
+  );
+}
 
 export const Result1 = () => {
   const handleItemClick = (url) => {
@@ -95,7 +108,10 @@ export const Result1 = () => {
 
         <TitleText>유사벌레붙이말미잘이 살고 있는 바다는 지금...</TitleText>
         <Kakao />
-        <TrashDetail>플라스틱 : 플라스틱 부표, 그물, 통발 등</TrashDetail>
+        <TrashDetail>유사벌레붙이말미잘이 살고 있는 서해 중부에는 현재 플라스틱 쓰레기 24566개, 목재 쓰레기 360개, 금속 쓰레기 332개, 유리 쓰레기 1250개가 존재합니다.</TrashDetail>
+
+        <TrashImg src={Westsea} />
+        <TrashDetail>최종멘트</TrashDetail>
 
         <TitleText>바다 캠페인 참여하기</TitleText>
         <ActivityContainer>
@@ -127,6 +143,9 @@ export const Result1 = () => {
         >
           내 결과 공유하기
         </ShareBtn>
+        <GoHome>
+          <HomeLink to="/">문제 다시 풀기</HomeLink>
+        </GoHome>
       </Container>
     </Wrapper>
   );
@@ -184,11 +203,12 @@ const DetailBox = styled.div`
   background: var(--light_sand, #ffeed9);
   width: 85vw;
   margin-top: 4vh;
+  margin-bottom: 3vh;
   border: none;
   padding: 4vw;
   text-align: left;
   line-height: 1.6;
-  font-size: 18px;
+  font-size: 16px;
   @media (min-width: 800px) {
     width: 250px;
   }
@@ -203,17 +223,29 @@ const TrashDetail = styled.div`
   @media (min-width: 800px) {
     width: 250px;
   }
-  height: 150px;
-  margin-top: 4vh;
+  //margin-top: 1vh;
   border: none;
   padding: 4vw;
-  text-align: center;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 16px;
 `;
 
 const BoatImg = styled.img`
-width: 80%;
-height: 7%;
-margin-right: 10%;
+  width: 80%;
+  height: 7%;
+  margin-right: 10%;
+`;
+
+const TrashImg = styled.img`
+  width: 80vw;
+  @media (min-width: 800px) {
+    width: 300px;
+  }
+  margin-top: 50px;
+  margin-bottom: 20px;
+  background-image: contain; // 이미지의 가로세로 비율을 유지하면서, 이미지가 잘리지 않을 때까지만 채운다.
+  max-width: 500px;
 `;
 
 const ActivityContainer = styled.div`
@@ -230,6 +262,7 @@ const Item = styled.div`
 const ActivityImg = styled.img`
   width: 150px;
   height: 100px;
+  cursor: pointer;
 `;
 const ActivityText = styled.div`
   text-align: center;
@@ -245,7 +278,31 @@ const ShareBtn = styled.button`
   background: var(--light_sand, #ffeed9);
   display: flex;
   font-size: large;
-  margin: 20px 0 30px 0;
+  margin: 20px 0 20px 0;
   font-weight: 400;
   cursor: pointer;
+
+  width: 270px;
+`;
+
+const GoHome = styled.button`
+  padding: 7px 70px;
+  justify-content: center;
+  align-items: center;
+  /* gap: 10px; */
+  border-radius: 10px;
+  border: none;
+  background: var(--light_sand, #ffeed9);
+  display: flex;
+  font-size: large;
+  margin: 0 0 30px 0;
+  font-weight: 400;
+  cursor: pointer;
+
+  width: 270px;
+`;
+
+const HomeLink = styled(Link)`
+  text-decoration-line: none;
+  color: black;
 `;

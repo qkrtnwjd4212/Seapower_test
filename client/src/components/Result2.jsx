@@ -12,6 +12,8 @@ import Plastic from "../assets/plastic.png";
 import Wood from "../assets/wood.png";
 import Glass from "../assets/glass.png";
 import Metal from "../assets/metal.png";
+import { Link } from "react-router-dom";
+import Eastsea from "../assets/eastsea.png";
 
 const { kakao } = window;
 
@@ -24,21 +26,33 @@ function Kakao() {
     };
     const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
 
-    const imageSrc = Plastic, imageSize = new kakao.maps.Size(40,40);
+    const imageSrc = Plastic,
+      imageSize = new kakao.maps.Size(40, 40);
     const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
-
 
     east_data.forEach((el) => {
       // 마커 이미지 선택
       let markerImage;
       if (el.종류 == "PL") {
-          markerImage = new kakao.maps.MarkerImage(Plastic, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Plastic,
+          new kakao.maps.Size(35, 35)
+        );
       } else if (el.종류 == "WD") {
-          markerImage = new kakao.maps.MarkerImage(Wood, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Wood,
+          new kakao.maps.Size(35, 35)
+        );
       } else if (el.종류 == "AU") {
-          markerImage = new kakao.maps.MarkerImage(Metal, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Metal,
+          new kakao.maps.Size(35, 35)
+        );
       } else if (el.종류 == "GL") {
-          markerImage = new kakao.maps.MarkerImage(Glass, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Glass,
+          new kakao.maps.Size(35, 35)
+        );
       }
 
       // 마커를 생성합니다
@@ -49,7 +63,7 @@ function Kakao() {
         position: new kakao.maps.LatLng(el.STR_LA, el.STR_LO),
         //마커에 hover시 나타날 title
         title: el.INVS_AREA_NM,
-        image: markerImage
+        image: markerImage,
       });
     });
   }, []);
@@ -82,12 +96,21 @@ export const Result2 = () => {
         <TitleBox>불가사리</TitleBox>
         <ResultImg src={Bulga} alt="bulga_img" />
         <DetailBox>
-        바다와 친하지 않은 당신! 불가사리 이름의 유래를 아시나요? <br/> 불가사리라는 이름은 몸을 잘라내도 다시 재생되기 때문에 죽일 수 없다는 뜻의 불가살에서 유래했다고 합니다.<br/> 불가사리는  오염과 온도 변화에 강해 대부분의 바다에서 잘 살아간다고 하는데요, 불가사리를 시작으로 바다에 대해 더욱 관심을 가져보는 것은 어떨까요? 불가사리가 살아가는 해역의 쓰레기 현황을 확인해볼까요?
+          바다와 친하지 않은 당신! 불가사리 이름의 유래를 아시나요? <br />{" "}
+          불가사리라는 이름은 몸을 잘라내도 다시 재생되기 때문에 죽일 수 없다는
+          뜻의 불가살에서 유래했다고 합니다.
+          <br /> 불가사리는 오염과 온도 변화에 강해 대부분의 바다에서 잘
+          살아간다고 하는데요, 불가사리를 시작으로 바다에 대해 더욱 관심을
+          가져보는 것은 어떨까요? 불가사리가 살아가는 해역의 쓰레기 현황을
+          확인해볼까요?
         </DetailBox>
 
         <TitleText>불가사리가 살고 있는 바다는 지금...</TitleText>
         <Kakao />
-        <TrashDetail>플라스틱 : 플라스틱 부표, 그물, 통발 등</TrashDetail>
+        <TrashDetail>불가사리가 살고 있는 동해안 남부에는 현재 플라스틱 쓰레기 10382개, 목재 쓰레기 421개, 금속 쓰레기 458개, 유리 쓰레기 741개가 존재합니다.</TrashDetail>
+
+        <TrashImg src={Eastsea} />
+        <TrashDetail>최종 멘트</TrashDetail>
 
         <TitleText>바다 캠페인 참여하기</TitleText>
         <ActivityContainer>
@@ -96,6 +119,7 @@ export const Result2 = () => {
               handleItemClick("https://www.caresea.or.kr/web/main.do")
             }
           >
+
             <ActivityImg src={Caresea} />
             <ActivityText>바다가꿈 참여하기</ActivityText>
           </Item>
@@ -107,7 +131,7 @@ export const Result2 = () => {
           </Item>
         </ActivityContainer>
 
-        <BoatImg src={Boat}/>
+        <BoatImg src={Boat} />
 
         <ShareBtn
           onClick={() =>
@@ -119,6 +143,9 @@ export const Result2 = () => {
         >
           내 결과 공유하기
         </ShareBtn>
+        <GoHome>
+          <HomeLink to="/">문제 다시 풀기</HomeLink>
+        </GoHome>
       </Container>
     </Wrapper>
   );
@@ -130,20 +157,24 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 100vw;
   @media (min-width: 800px) {
-    width: 400px;
+    width: 350px;
   }
   background: linear-gradient(to bottom, #ffffff 300px, #00b4d8 600px);
   max-width: 800px;
 `;
 
 const TitleText = styled.div`
-  margin-top: 30px;
+  margin-top: 6vh;
   text-align: center;
 `;
 
 const TitleBox = styled.div`
   padding: 10px;
-  width: 300px;
+
+  width: 90vw;
+  @media (min-width: 800px) {
+    width: 200px;
+  }
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -157,7 +188,10 @@ const TitleBox = styled.div`
 `;
 
 const ResultImg = styled.img`
-  width: 350px;
+  width: 90vw;
+  @media (min-width: 800px) {
+    width: 350px;
+  }
   margin-top: 50px;
   background-image: contain; // 이미지의 가로세로 비율을 유지하면서, 이미지가 잘리지 않을 때까지만 채운다.
   max-width: 500px;
@@ -167,32 +201,51 @@ const DetailBox = styled.div`
   border-radius: 10px;
   border: 1px solid #000;
   background: var(--light_sand, #ffeed9);
-  width: 320px;
-  //height: 500px;
-  margin: 50px 10px 50px 10px;
+  width: 85vw;
+  margin-top: 4vh;
+  margin-bottom: 3vh;
   border: none;
-  padding: 30px 20px 30px 20px;
+  padding: 4vw;
   text-align: left;
   line-height: 1.6;
-  font-size: 18px;
+  font-size: 16px;
+  @media (min-width: 800px) {
+    width: 250px;
+  }
 `;
 
 const TrashDetail = styled.div`
   border-radius: 10px;
   border: 1px solid #000;
   background: var(--light_sand, #ffeed9);
-  width: 300px;
-  height: 150px;
-  margin: 0 10px 50px 10px;
+
+  width: 85vw;
+  @media (min-width: 800px) {
+    width: 250px;
+  }
+  //margin-top: 1vh;
   border: none;
-  padding: 20px;
-  text-align: center;
+  padding: 4vw;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 16px;
 `;
 
 const BoatImg = styled.img`
-width: 80%;
-height: 7%;
-margin-right: 10%;
+  width: 80%;
+  height: 7%;
+  margin-right: 10%;
+`;
+
+const TrashImg = styled.img`
+  width: 80vw;
+  @media (min-width: 800px) {
+    width: 300px;
+  }
+  margin-top: 50px;
+  margin-bottom: 20px;
+  background-image: contain; // 이미지의 가로세로 비율을 유지하면서, 이미지가 잘리지 않을 때까지만 채운다.
+  max-width: 500px;
 `;
 
 const ActivityContainer = styled.div`
@@ -209,6 +262,7 @@ const Item = styled.div`
 const ActivityImg = styled.img`
   width: 150px;
   height: 100px;
+  cursor: pointer;
 `;
 const ActivityText = styled.div`
   text-align: center;
@@ -224,7 +278,31 @@ const ShareBtn = styled.button`
   background: var(--light_sand, #ffeed9);
   display: flex;
   font-size: large;
-  margin: 20px 0 30px 0;
+  margin: 20px 0 20px 0;
   font-weight: 400;
   cursor: pointer;
+
+  width: 270px;
+`;
+
+const GoHome = styled.button`
+  padding: 7px 70px;
+  justify-content: center;
+  align-items: center;
+  /* gap: 10px; */
+  border-radius: 10px;
+  border: none;
+  background: var(--light_sand, #ffeed9);
+  display: flex;
+  font-size: large;
+  margin: 0 0 30px 0;
+  font-weight: 400;
+  cursor: pointer;
+
+  width: 270px;
+`;
+
+const HomeLink = styled(Link)`
+  text-decoration-line: none;
+  color: black;
 `;

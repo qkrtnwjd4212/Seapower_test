@@ -12,6 +12,8 @@ import Plastic from "../assets/plastic.png";
 import Wood from "../assets/wood.png";
 import Glass from "../assets/glass.png";
 import Metal from "../assets/metal.png";
+import { Link } from "react-router-dom";
+import eastsea from "../assets/eastsea.png";
 
 const { kakao } = window;
 
@@ -24,21 +26,33 @@ function Kakao() {
     };
     const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
 
-    const imageSrc = Plastic, imageSize = new kakao.maps.Size(40,40);
+    const imageSrc = Plastic,
+      imageSize = new kakao.maps.Size(40, 40);
     const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
-
 
     east_data.forEach((el) => {
       // 마커 이미지 선택
       let markerImage;
       if (el.종류 == "PL") {
-          markerImage = new kakao.maps.MarkerImage(Plastic, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Plastic,
+          new kakao.maps.Size(35, 35)
+        );
       } else if (el.종류 == "WD") {
-          markerImage = new kakao.maps.MarkerImage(Wood, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Wood,
+          new kakao.maps.Size(35, 35)
+        );
       } else if (el.종류 == "AU") {
-          markerImage = new kakao.maps.MarkerImage(Metal, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Metal,
+          new kakao.maps.Size(35, 35)
+        );
       } else if (el.종류 == "GL") {
-          markerImage = new kakao.maps.MarkerImage(Glass, new kakao.maps.Size(35,35));
+        markerImage = new kakao.maps.MarkerImage(
+          Glass,
+          new kakao.maps.Size(35, 35)
+        );
       }
 
       // 마커를 생성합니다
@@ -49,7 +63,7 @@ function Kakao() {
         position: new kakao.maps.LatLng(el.STR_LA, el.STR_LO),
         //마커에 hover시 나타날 title
         title: el.INVS_AREA_NM,
-        image: markerImage
+        image: markerImage,
       });
     });
   }, []);
@@ -77,19 +91,25 @@ export const Result8 = () => {
       <Container>
         <Header />
         <TitleText>
-          가장 고난이도의 문제를 맞추신 당신, <br/> 
+          가장 고난이도의 문제를 맞추신 당신, <br />
           해양 잘알이시군요!
         </TitleText>
         <TitleBox>강치</TitleBox>
         <ResultImg src={Gangchi} alt="gangchi_img" />
         <DetailBox>
-          바다와 친한 당신, 우리 바다의 멸종생물인 강치에 대해서도 잘 알고 있군요! <br /> 강치는 독도에 서식했던 바다사자를 말합니다. 원래 독도는 바다사자인 강치의 옛말을 따 가지도라 불릴 정도로 강치가 많았다고 해요. 안타깝게도 남획으로 강치는 1970년 이후 더 이상 발견되지 않고 있어요. <br /> 강치가 서식하던 해역의 쓰레기 현황을 확인해볼까요?
-
+          바다와 친한 당신, 우리 바다의 멸종생물인 강치에 대해서도 잘 알고
+          있군요! <br /> 강치는 독도에 서식했던 바다사자를 말합니다. 원래 독도는
+          바다사자인 강치의 옛말을 따 가지도라 불릴 정도로 강치가 많았다고 해요.
+          안타깝게도 남획으로 강치는 1970년 이후 더 이상 발견되지 않고 있어요.{" "}
+          <br /> 강치가 서식하던 해역의 쓰레기 현황을 확인해볼까요?
         </DetailBox>
 
         <TitleText>강치가 살았던 바다는 지금...</TitleText>
         <Kakao />
-        <TrashDetail>플라스틱 : 플라스틱 부표, 그물, 통발 등</TrashDetail>
+        <TrashDetail>강치가 살았던 동해안 중부에는 현재 플라스틱 쓰레기 10382개, 목재 쓰레기 421개, 금속 쓰레기 458개, 유리 쓰레기 741개가 존재합니다.</TrashDetail>
+
+        <TrashImg src={eastsea} />
+        <TrashDetail>최종 문구</TrashDetail>
 
         <TitleText>바다 캠페인 참여하기</TitleText>
         <ActivityContainer>
@@ -121,6 +141,9 @@ export const Result8 = () => {
         >
           내 결과 공유하기
         </ShareBtn>
+        <GoHome>
+          <HomeLink to="/">문제 다시 풀기</HomeLink>
+        </GoHome>
       </Container>
     </Wrapper>
   );
@@ -132,20 +155,24 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 100vw;
   @media (min-width: 800px) {
-    width: 400px;
+    width: 350px;
   }
   background: linear-gradient(to bottom, #ffffff 300px, #00b4d8 600px);
   max-width: 800px;
 `;
 
 const TitleText = styled.div`
-  margin-top: 30px;
+  margin-top: 6vh;
   text-align: center;
 `;
 
 const TitleBox = styled.div`
   padding: 10px;
-  width: 300px;
+
+  width: 90vw;
+  @media (min-width: 800px) {
+    width: 200px;
+  }
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -159,7 +186,10 @@ const TitleBox = styled.div`
 `;
 
 const ResultImg = styled.img`
-  width: 350px;
+  width: 90vw;
+  @media (min-width: 800px) {
+    width: 350px;
+  }
   margin-top: 50px;
   background-image: contain; // 이미지의 가로세로 비율을 유지하면서, 이미지가 잘리지 않을 때까지만 채운다.
   max-width: 500px;
@@ -169,32 +199,51 @@ const DetailBox = styled.div`
   border-radius: 10px;
   border: 1px solid #000;
   background: var(--light_sand, #ffeed9);
-  width: 320px;
-  //height: 500px;
-  margin: 50px 10px 50px 10px;
+  width: 85vw;
+  margin-top: 4vh;
+  margin-bottom: 3vh;
   border: none;
-  padding: 30px 20px 30px 20px;
+  padding: 4vw;
   text-align: left;
   line-height: 1.6;
-  font-size: 18px;
+  font-size: 16px;
+  @media (min-width: 800px) {
+    width: 250px;
+  }
 `;
 
 const TrashDetail = styled.div`
   border-radius: 10px;
   border: 1px solid #000;
   background: var(--light_sand, #ffeed9);
-  width: 300px;
-  height: 150px;
-  margin: 0 10px 50px 10px;
+
+  width: 85vw;
+  @media (min-width: 800px) {
+    width: 250px;
+  }
+  //margin-top: 1vh;
   border: none;
-  padding: 20px;
-  text-align: center;
+  padding: 4vw;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 16px;
 `;
 
 const BoatImg = styled.img`
-width: 80%;
-height: 7%;
-margin-right: 10%;
+  width: 80%;
+  height: 7%;
+  margin-right: 10%;
+`;
+
+const TrashImg = styled.img`
+  width: 80vw;
+  @media (min-width: 800px) {
+    width: 300px;
+  }
+  margin-top: 50px;
+  margin-bottom: 20px;
+  background-image: contain; // 이미지의 가로세로 비율을 유지하면서, 이미지가 잘리지 않을 때까지만 채운다.
+  max-width: 500px;
 `;
 
 const ActivityContainer = styled.div`
@@ -211,6 +260,7 @@ const Item = styled.div`
 const ActivityImg = styled.img`
   width: 150px;
   height: 100px;
+  cursor: pointer;
 `;
 const ActivityText = styled.div`
   text-align: center;
@@ -226,7 +276,31 @@ const ShareBtn = styled.button`
   background: var(--light_sand, #ffeed9);
   display: flex;
   font-size: large;
-  margin: 20px 0 30px 0;
+  margin: 20px 0 20px 0;
   font-weight: 400;
   cursor: pointer;
+
+  width: 270px;
+`;
+
+const GoHome = styled.button`
+  padding: 7px 70px;
+  justify-content: center;
+  align-items: center;
+  /* gap: 10px; */
+  border-radius: 10px;
+  border: none;
+  background: var(--light_sand, #ffeed9);
+  display: flex;
+  font-size: large;
+  margin: 0 0 30px 0;
+  font-weight: 400;
+  cursor: pointer;
+
+  width: 270px;
+`;
+
+const HomeLink = styled(Link)`
+  text-decoration-line: none;
+  color: black;
 `;

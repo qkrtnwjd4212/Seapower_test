@@ -11,7 +11,6 @@ import { Result6 } from "../components/Result6";
 import { Result7 } from "../components/Result7";
 import { Result8 } from "../components/Result8";
 
-
 const Wrapper = styled.div`
   width: 100vw;
   display: flex;
@@ -46,7 +45,7 @@ export const ResultPage = () => {
           </MainPageWeb_v>
         </Wrapper>
       )}
-  {step == 4 && (
+      {step == 4 && (
         <Wrapper>
           <MainPageWeb_v>
             <Result4 />
