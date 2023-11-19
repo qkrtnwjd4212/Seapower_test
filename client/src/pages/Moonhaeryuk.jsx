@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import MainPageWeb_v from "../UI/MainPageWeb_v";
+import "../index.css";
 import { MainPage, Header } from "../components";
 import {
   Step1,
@@ -17,6 +18,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Button = styled(Link)`
+  color: black;
+  text-decoration: none;
   cursor: pointer;
 `;
 
@@ -200,6 +203,11 @@ export const Moonhaeryuk = () => {
 
             {step < 10 ? (
               <button
+                style={{
+                  height: "5vh",
+                  borderRadius: "10px",
+                  backgroundColor: "var(--light-sand)",
+                }}
                 onClick={onClickNextButton}
                 disabled={step !== 0 && !isSelect}
               >
@@ -208,12 +216,23 @@ export const Moonhaeryuk = () => {
             ) : step === 10 ? (
               <>
                 {selectMarineLife()}
-                <Button
-                  style={{ display: "flex", justifyContent: "center" }}
-                  to={`/result/${resultId}`}
+                <button
+                  style={{
+                    height: "5vh",
+                    borderRadius: "10px",
+                    backgroundColor: "var(--light-sand)",
+                  }}
                 >
-                  결과보기
-                </Button>
+                  <Button
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                    to={`/result/${resultId}`}
+                  >
+                    결과보기
+                  </Button>
+                </button>
               </>
             ) : (
               ""
