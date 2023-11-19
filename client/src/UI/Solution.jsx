@@ -11,5 +11,6 @@ const Solution = styled.div`
     width: 320px;
   }
   line-height: 1.5;
+  padding: 0 10px 0 10px;
 `;
 export default Solution;
