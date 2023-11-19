@@ -1,0 +1,98 @@
+import { Fragment, useState } from "react";
+import Container from "../UI/Container";
+import quizImg from "../assets/quiz4_7_img.png";
+import "../index.css";
+import Question from "../UI/Question";
+import QuestionContents from "../UI/QuestionContents";
+
+export const Step4 = ({
+  totalScoreHandler,
+  setIsSelect,
+  isSelect,
+  ecologyScoreHandler,
+}) => {
+  const [isAnswer, setIsAnswer] = useState(false);
+  const [selectedValue, setSectedValue] = useState(null);
+
+  const answer = 4;
+
+  const onClick = (value) => {
+    setIsSelect((prev) => !prev);
+    setSectedValue(value);
+    const isAnswer = answer === parseInt(value);
+    setIsAnswer(isAnswer);
+    if (isAnswer) {
+      totalScoreHandler();
+      ecologyScoreHandler();
+    }
+  };
+
+  const nonEvent = () => {
+    //
+  };
+
+  return (
+    <Fragment>
+      <Container>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 10,
+          }}
+        >
+          <img src={quizImg} style={{ height: "25vh" }} />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            소설 '모비 딕'에 등장하는 어종으로, 육식동물로서는 손에 꼽힐 정도로
+            거대한 어종은 무엇일까요?
+          </div>
+          <Question
+            style={{
+              backgroundColor:
+                selectedValue === 1 ? "red" : "var(--bright-blue)",
+            }}
+            onClick={isSelect ? nonEvent : () => onClick(1)}
+          >
+            <QuestionContents>돌고래</QuestionContents>
+          </Question>
+          <Question
+            style={{
+              backgroundColor:
+                selectedValue === 2 ? "red" : "var(--bright-blue)",
+            }}
+            onClick={isSelect ? nonEvent : () => onClick(2)}
+          >
+            <QuestionContents>범고래</QuestionContents>
+          </Question>
+          <Question
+            style={{
+              backgroundColor:
+                selectedValue === 3 ? "red" : "var(--bright-blue)",
+            }}
+            onClick={isSelect ? nonEvent : () => onClick(3)}
+          >
+            <QuestionContents>망치고래</QuestionContents>
+          </Question>
+          <Question
+            style={{
+              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
+            }}
+            onClick={isSelect ? nonEvent : () => onClick(4)}
+          >
+            <QuestionContents>향유고래</QuestionContents>
+          </Question>
+          {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
+        </div>
+      </Container>
+    </Fragment>
+  );
+};
