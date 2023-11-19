@@ -55,7 +55,7 @@ export const Step5 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 1 ? "red" : "var(--bright-blue)",
+                selectedValue === 1 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
@@ -65,7 +65,7 @@ export const Step5 = ({
           </Question>
           <Question
             style={{
-              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
+              backgroundColor: isSelect ? "#8DBD40" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
@@ -74,7 +74,7 @@ export const Step5 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 3 ? "red" : "var(--bright-blue)",
+                selectedValue === 3 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(3)}
           >
@@ -83,7 +83,7 @@ export const Step5 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 4 ? "red" : "var(--bright-blue)",
+                selectedValue === 4 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(4)}
           >
@@ -92,11 +92,15 @@ export const Step5 = ({
           {isSelect && (
             <Solution>
               {isAnswer ? (
-                <div style={{ color: "green" }}>정답 !</div>
+                <div style={{ color: "#8DBD40" }}>정답 !</div>
               ) : (
-                <div style={{ color: "red" }}>오답 !</div>
+                <div style={{ color: "#C34747" }}>오답 !</div>
               )}
               <div>
+                산호는 다양한 해양생물에게 안식처를 제공해주며 바다의
+                열대우림이라고 불리고 있습니다. 건강한 산호초 생태계는 해양의
+                생물다양성을 높여줄 수 있습니다
+                <br />
                 산호는 식물이 아닌 산호충의 군집으로, 동물입니다✨
                 <br />
                 산호의 색은 산호에 깃들어 사는 조류의 색입니다

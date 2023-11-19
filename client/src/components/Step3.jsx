@@ -54,7 +54,7 @@ export const Step3 = ({
           </Quiz>
           <Question
             style={{
-              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
+              backgroundColor: isSelect ? "#8DBD40" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
@@ -63,7 +63,7 @@ export const Step3 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 2 ? "red" : "var(--bright-blue)",
+                selectedValue === 2 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
@@ -72,7 +72,7 @@ export const Step3 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 3 ? "red" : "var(--bright-blue)",
+                selectedValue === 3 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(3)}
           >
@@ -81,7 +81,7 @@ export const Step3 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 4 ? "red" : "var(--bright-blue)",
+                selectedValue === 4 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(4)}
           >
@@ -90,11 +90,15 @@ export const Step3 = ({
           {isSelect && (
             <Solution>
               {isAnswer ? (
-                <div style={{ color: "green" }}>정답 !</div>
+                <div style={{ color: "#8DBD40" }}>정답 !</div>
               ) : (
-                <div style={{ color: "red" }}>오답 !</div>
+                <div style={{ color: "#C34747" }}>오답 !</div>
               )}
-              <div>산호🪸가 하얗게 변하는 백화현상입니다</div>
+              <div>
+                산호🪸가 하얗게 변하는 백화현상입니다.
+                <br /> 산호는 주변 환경에 극도로 민감하기 때문에 지구온난화로
+                수온이 상승하는 것은 산호의 성장에 악영향을 줍니다.
+              </div>
             </Solution>
           )}
         </div>

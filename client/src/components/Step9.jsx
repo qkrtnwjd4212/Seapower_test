@@ -49,14 +49,14 @@ export const Step9 = ({
           <img src={quizImg} style={{ height: "25vh", margin: "3vh" }} />
           <Quiz style={{ flexDirection: "column" }}>
             다음에서 설명하는 해양오염 현상은 무엇입니까?
-            <div style={{ color: "red" }}>
+            <div style={{ color: "#C34747" }}>
               물속에 질소나 인이 많아 플랑크톤의 영양분이 많아지는 현상
             </div>
           </Quiz>
           <Question
             style={{
               backgroundColor:
-                selectedValue === 1 ? "red" : "var(--bright-blue)",
+                selectedValue === 1 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
@@ -65,7 +65,7 @@ export const Step9 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 2 ? "red" : "var(--bright-blue)",
+                selectedValue === 2 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
@@ -74,7 +74,7 @@ export const Step9 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 3 ? "red" : "var(--bright-blue)",
+                selectedValue === 3 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(3)}
           >
@@ -82,7 +82,7 @@ export const Step9 = ({
           </Question>
           <Question
             style={{
-              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
+              backgroundColor: isSelect ? "#8DBD40" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(4)}
           >
@@ -91,11 +91,11 @@ export const Step9 = ({
           {isSelect && (
             <Solution>
               {isAnswer ? (
-                <div style={{ color: "green" }}>정답 !</div>
+                <div style={{ color: "#8DBD40" }}>정답 !</div>
               ) : (
-                <div style={{ color: "red" }}>오답 !</div>
+                <div style={{ color: "#C34747" }}>오답 !</div>
               )}
-              <div>영양분이 많아지는 현상이므로 富(부자 부)영양화입니다🦠</div>
+              <div> 부영양화는 화학 비료나 오수의 유입 등으로 물에 인과 질소와 같은 영양분이 과잉 공급되어, 식물의 급속한 성장 또는 소멸을 유발하고 조류가 과도하게 번식하게 하여 산소를 빼앗아 생물을 죽게 하는 현상을 의미합니다. 🦠 </div>
             </Solution>
           )}
         </div>

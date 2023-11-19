@@ -56,7 +56,7 @@ export const Step10 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 1 ? "red" : "var(--bright-blue)",
+                selectedValue === 1 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
@@ -64,7 +64,7 @@ export const Step10 = ({
           </Question>
           <Question
             style={{
-              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
+              backgroundColor: isSelect ? "#8DBD40" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
@@ -73,13 +73,13 @@ export const Step10 = ({
           {isSelect && (
             <Solution>
               {isAnswer ? (
-                <div style={{ color: "green" }}>정답 !</div>
+                <div style={{ color: "#8DBD40" }}>정답 !</div>
               ) : (
-                <div style={{ color: "red" }}>오답 !</div>
+                <div style={{ color: "#C34747" }}>오답 !</div>
               )}
               <div>
                 우리나라의 갯벌은 아직 IPCC에 의해 블루카본으로 인정받지
-                못했습니다🥺
+                못했지만🥺, 뛰어난 탄소 흡수 능력으로 차세대 블루카본으로 떠오르는 중입니다. 또한 갯벌의 가치를 인정받기 위한 다양한 사업과 연구들도 추진중이라고 해요!
               </div>
             </Solution>
           )}

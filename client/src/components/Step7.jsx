@@ -53,7 +53,7 @@ export const Step7 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 1 ? "red" : "var(--bright-blue)",
+                selectedValue === 1 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
@@ -62,7 +62,7 @@ export const Step7 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 2 ? "red" : "var(--bright-blue)",
+                selectedValue === 2 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
@@ -70,7 +70,7 @@ export const Step7 = ({
           </Question>
           <Question
             style={{
-              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
+              backgroundColor: isSelect ? "#8DBD40" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(3)}
           >
@@ -79,7 +79,7 @@ export const Step7 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 4 ? "red" : "var(--bright-blue)",
+                selectedValue === 4 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(4)}
           >
@@ -88,11 +88,11 @@ export const Step7 = ({
           {isSelect && (
             <Solution>
               {isAnswer ? (
-                <div style={{ color: "green" }}>정답 !</div>
+                <div style={{ color: "#8DBD40" }}>정답 !</div>
               ) : (
-                <div style={{ color: "red" }}>오답 !</div>
+                <div style={{ color: "#C34747" }}>오답 !</div>
               )}
-              <div>사진의 생물은 토종 바다사자, 강치입니다!🦭</div>
+              <div>사진의 생물은 독도에서 서식하던 우리나라의 토종 바다사자, 강치입니다!🦭 <br/> 환경부에 따르면, 19세기까지만 해도 독도를 강치의 옛말인 가지도로 부를 정도로 독도에 강치가 많이 서식했다고 해요. <br/> 하지만 무분별한 포획으로 1975년 이후 멸종한 것으로 추정되고 있습니다.  </div>
             </Solution>
           )}
         </div>

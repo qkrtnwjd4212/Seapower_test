@@ -52,7 +52,7 @@ export const Step1 = ({
           </Quiz>
           <Question
             style={{
-              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
+              backgroundColor: isSelect ? "#8DBD40" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
@@ -61,7 +61,7 @@ export const Step1 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 2 ? "red" : "var(--bright-blue)",
+                selectedValue === 2 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
@@ -70,7 +70,7 @@ export const Step1 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 3 ? "red" : "var(--bright-blue)",
+                selectedValue === 3 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(3)}
           >
@@ -79,7 +79,7 @@ export const Step1 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 4 ? "red" : "var(--bright-blue)",
+                selectedValue === 4 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(4)}
           >
@@ -88,13 +88,15 @@ export const Step1 = ({
           {isSelect && (
             <Solution>
               {isAnswer ? (
-                <div style={{ color: "green" }}>정답 !</div>
+                <div style={{ color: "#8DBD40" }}>정답 !</div>
               ) : (
-                <div style={{ color: "red" }}>오답 !</div>
+                <div style={{ color: "#C34747" }}>오답 !</div>
               )}
               <div>
-                해양쓰레기 중 가장 높은 비율을 차지하는 쓰레기는
-                플라스틱입니다😭
+                {/* 해양쓰레기 중 가장 높은 비율을 차지하는 쓰레기는
+                플라스틱입니다😭 */}
+                해양환경정보포털의 2022년부터 2023년 해안쓰레기 모니터링 통계에
+                따르면 플라스틱 비율이 전체의 91%를 차지한다고 합니다😭
               </div>
             </Solution>
           )}

@@ -49,13 +49,12 @@ export const Step8 = ({
           <img src={quizImg} style={{ height: "25vh", margin: "3vh" }} />
           <Quiz>
             육상 생태계의 먹이 사슬은 식물과 초식 동물, 포식 동물의 세 단계가
-            기본적으로 굉장히 단순합니다. 해양 생태계의 먹이 사슬도 육상
-            생태계와 동일할까요?
+            기본적으로 굉장히 단순합니다. 해양 생태계의 먹이 사슬도 육상 생태계와 동일할까요?
           </Quiz>
           <Question
             style={{
               backgroundColor:
-                selectedValue === 1 ? "red" : "var(--bright-blue)",
+                selectedValue === 1 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
@@ -63,7 +62,7 @@ export const Step8 = ({
           </Question>
           <Question
             style={{
-              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
+              backgroundColor: isSelect ? "#8DBD40" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
@@ -72,12 +71,12 @@ export const Step8 = ({
           {isSelect && (
             <Solution>
               {isAnswer ? (
-                <div style={{ color: "green" }}>정답 !</div>
+                <div style={{ color: "#8DBD40" }}>정답 !</div>
               ) : (
-                <div style={{ color: "red" }}>오답 !</div>
+                <div style={{ color: "#C34747" }}>오답 !</div>
               )}
               <div>
-                해양 생태계의 먹이사슬은 4-5단계로 육상보다 복잡합니다🦐🦈
+                해양 생태계의 먹이사슬 구조는 지역이나 바다의 환경에 따라 달라지고, 육상 생태계보다 훨씬 복잡합니다! <br/> 생산자 역할의 식물성 플랑크톤을 시작으로, 식물성 플랑크톤을 먹고 살아가는 동물성 플랑크톤, 그걸 먹고 생활하는 작은 물고기들과 또 더 큰 물고기들... <br/>바다는 생물 다양성이 매우 풍부하여, 먹이 사슬이 기본적으로 4~5단계 정도에 해당해요 🦐🦈
               </div>
             </Solution>
           )}
