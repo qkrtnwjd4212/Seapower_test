@@ -54,7 +54,7 @@ export const Step4 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 1 ? "red" : "var(--bright-blue)",
+                selectedValue === 1 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
@@ -63,7 +63,7 @@ export const Step4 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 2 ? "red" : "var(--bright-blue)",
+                selectedValue === 2 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
@@ -72,7 +72,7 @@ export const Step4 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 3 ? "red" : "var(--bright-blue)",
+                selectedValue === 3 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(3)}
           >
@@ -80,7 +80,7 @@ export const Step4 = ({
           </Question>
           <Question
             style={{
-              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
+              backgroundColor: isSelect ? "#8DBD40" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(4)}
           >
@@ -89,9 +89,9 @@ export const Step4 = ({
           {isSelect && (
             <Solution>
               {isAnswer ? (
-                <div style={{ color: "green" }}>정답 !</div>
+                <div style={{ color: "#8DBD40" }}>정답 !</div>
               ) : (
-                <div style={{ color: "red" }}>오답 !</div>
+                <div style={{ color: "#C34747" }}>오답 !</div>
               )}
               <div>모비 딕에 나오는 흰 고래(백경)는 향유고래입니다🐳</div>
             </Solution>

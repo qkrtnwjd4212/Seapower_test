@@ -53,7 +53,7 @@ export const Step2 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 1 ? "red" : "var(--bright-blue)",
+                selectedValue === 1 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
@@ -61,7 +61,7 @@ export const Step2 = ({
           </Question>
           <Question
             style={{
-              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
+              backgroundColor: isSelect ? "#8DBD40" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
@@ -70,7 +70,7 @@ export const Step2 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 3 ? "red" : "var(--bright-blue)",
+                selectedValue === 3 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(3)}
           >
@@ -79,7 +79,7 @@ export const Step2 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 4 ? "red" : "var(--bright-blue)",
+                selectedValue === 4 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(4)}
           >
@@ -88,9 +88,9 @@ export const Step2 = ({
           {isSelect && (
             <Solution>
               {isAnswer ? (
-                <div style={{ color: "green" }}>정답 !</div>
+                <div style={{ color: "#8DBD40" }}>정답 !</div>
               ) : (
-                <div style={{ color: "red" }}>오답 !</div>
+                <div style={{ color: "#C34747" }}>오답 !</div>
               )}
               <div>
                 {/* 바다에 가장 많이 버려지는 쓰레기는 담배꽁초입니다😵 */}

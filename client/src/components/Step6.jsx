@@ -54,7 +54,7 @@ export const Step6 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 1 ? "red" : "var(--bright-blue)",
+                selectedValue === 1 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(1)}
           >
@@ -63,7 +63,7 @@ export const Step6 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 2 ? "red" : "var(--bright-blue)",
+                selectedValue === 2 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(2)}
           >
@@ -72,7 +72,7 @@ export const Step6 = ({
           <Question
             style={{
               backgroundColor:
-                selectedValue === 3 ? "red" : "var(--bright-blue)",
+                selectedValue === 3 ? "#C34747" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(3)}
           >
@@ -80,7 +80,7 @@ export const Step6 = ({
           </Question>
           <Question
             style={{
-              backgroundColor: isSelect ? "green" : "var(--bright-blue)",
+              backgroundColor: isSelect ? "#8DBD40" : "var(--bright-blue)",
             }}
             onClick={isSelect ? nonEvent : () => onClick(4)}
           >
@@ -89,9 +89,9 @@ export const Step6 = ({
           {isSelect && (
             <Solution>
               {isAnswer ? (
-                <div style={{ color: "green" }}>정답 !</div>
+                <div style={{ color: "#8DBD40" }}>정답 !</div>
               ) : (
-                <div style={{ color: "red" }}>오답 !</div>
+                <div style={{ color: "#C34747" }}>오답 !</div>
               )}
               <div>
                 닥터피시를 선택하신 분 있으신가요? 닥터피시는 피부를 핥아 각질과 죽은 세포를 먹고 새 살만 남겨 피부병 중 하나인 마름거짐을 치료해준다고 알려져있죠. <br/>
