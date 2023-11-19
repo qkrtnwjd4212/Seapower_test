@@ -33,6 +33,7 @@ export const Moonhaeryuk = () => {
   const [environmentScore, setEnvironmentScore] = useState(0); // 환경 점수
   const [easy, setEasy] = useState(false); // 담배꽁초 문제
   const [bonus, setBonus] = useState(false); // 보너스 문제
+  // const [navigateToResult, setNavigateToResult] = useState(false);
 
   const onClickNextButton = () => {
     setStep((prev) => prev + 1);
@@ -94,10 +95,19 @@ export const Moonhaeryuk = () => {
 
   useEffect(() => {
     console.log(totalScore);
-    if (num !== resultId) {
-      setResultId(num);
-    }
+
+    // if (step === 10) {
+    //   setResultId(num + 1);
+    // }
   }, [totalScore]);
+
+  useEffect(() => {
+    selectMarineLife();
+  }, [environmentScore]);
+
+  useEffect(() => {
+    setResultId(num + 1);
+  }, [num]);
 
   return (
     <Fragment>
@@ -200,6 +210,7 @@ export const Moonhaeryuk = () => {
               ""
             )}
             {/* {step === 11 ? <ResultPage totalScore={totalScore} /> : ""} */}
+
             {step < 10 ? (
               <button
                 style={{
