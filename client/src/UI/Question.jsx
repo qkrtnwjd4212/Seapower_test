@@ -11,7 +11,7 @@ const Question = styled.div`
   width: 85vw;
   height: 5vh;
   @media (min-width: 800px) {
-    width: 30vw;
+    width: 320px;
   }
 `;
 

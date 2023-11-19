@@ -13,7 +13,7 @@ const HeaderCss = styled.div`
   color: white;
 
   @media (min-width: 800px) {
-    width: 400px;
+    width: 350px;
   }
 `;
 

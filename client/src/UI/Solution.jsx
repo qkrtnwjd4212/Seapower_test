@@ -1,11 +1,12 @@
 import styled from "styled-components";
-const Quiz = styled.div`
+const Solution = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  width: 85vw;
+  margin-top: 2vh;
+  width: 95vw;
   @media (min-width: 800px) {
     width: 320px;
   }
 `;
-export default Quiz;
+export default Solution;
