@@ -1,4 +1,5 @@
 import { Fragment, useState } from "react";
+import Quiz from "../UI/Quiz";
 import Container from "../UI/Container";
 import quizImg from "../assets/quiz1_3_img.png";
 import "../index.css";
@@ -47,15 +48,7 @@ export const Step2 = ({
           }}
         >
           <img src={quizImg} style={{ height: "25vh" }} />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            바다에서 가장 많이 버려지는 쓰레기는 무엇일까요?
-          </div>
+          <Quiz>바다에서 가장 많이 버려지는 쓰레기는 무엇일까요?</Quiz>
           <Question
             style={{
               backgroundColor:

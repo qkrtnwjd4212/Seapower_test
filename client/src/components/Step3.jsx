@@ -1,4 +1,5 @@
 import { Fragment, useState } from "react";
+import Quiz from "../UI/Quiz";
 import Container from "../UI/Container";
 import quizImg from "../assets/quiz1_3_img.png";
 import "../index.css";
@@ -45,17 +46,11 @@ export const Step3 = ({
           }}
         >
           <img src={quizImg} style={{ height: "25vh" }} />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+          <Quiz>
             선크림에 들어있는 옥시벤존, 옥티녹세이트는 산호의 ____을 일으켜 해양
             생태계에 악영향을 끼칩니다. 산호가 수온의 급격한 변화로 하얗게
             죽어가는 이러한 현상을 무엇이라고 할까요?
-          </div>
+          </Quiz>
           <Question
             style={{
               backgroundColor: isSelect ? "green" : "var(--bright-blue)",

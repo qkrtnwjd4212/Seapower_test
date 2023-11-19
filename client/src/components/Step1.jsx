@@ -1,5 +1,6 @@
 import { Fragment, useState } from "react";
 import Container from "../UI/Container";
+import Quiz from "../UI/Quiz";
 import quizImg from "../assets/quiz1_3_img.png";
 import "../index.css";
 import Question from "../UI/Question";
@@ -45,15 +46,9 @@ export const Step1 = ({
           }}
         >
           <img src={quizImg} style={{ height: "25vh" }} />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+          <Quiz>
             해양쓰레기 중 가장 높은 비율을 차지하는 쓰레기는 무엇일까요?
-          </div>
+          </Quiz>
           <Question
             style={{
               backgroundColor: isSelect ? "green" : "var(--bright-blue)",

@@ -13,9 +13,6 @@ const Question = styled.div`
   @media (min-width: 800px) {
     width: 30vw;
   }
-  @media (max-width: 250px) {
-    width: 100vw;
-  }
 `;
 
 export default Question;

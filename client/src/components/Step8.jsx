@@ -2,6 +2,7 @@ import { Fragment, useState } from "react";
 import Container from "../UI/Container";
 import quizImg from "../assets/quiz8_10_img.png";
 import "../index.css";
+import Quiz from "../UI/Quiz";
 import Question from "../UI/Question";
 import QuestionContents from "../UI/QuestionContents";
 
@@ -45,17 +46,11 @@ export const Step8 = ({
           }}
         >
           <img src={quizImg} style={{ height: "25vh" }} />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+          <Quiz>
             육상 생태계의 먹이 사슬은 식물과 초식 동물, 포식 동물의 세 단계가
             기본적으로 굉장히 단순합니다. 해양 생태계의 먹이 사슬도 육상
             생태계와 동일할까요?
-          </div>
+          </Quiz>
           <Question
             style={{
               backgroundColor:

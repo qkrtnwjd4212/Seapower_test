@@ -1,4 +1,5 @@
 import { Fragment, useState } from "react";
+import Quiz from "../UI/Quiz";
 import Container from "../UI/Container";
 import quizImg from "../assets/gangchiquiz.png";
 import "../index.css";
@@ -47,15 +48,7 @@ export const Step7 = ({
           }}
         >
           <img src={quizImg} style={{ height: "25vh" }} />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            다음 사진은 어떤 생물 종을 나타내고 있을까요?
-          </div>
+          <Quiz>다음 사진은 어떤 생물 종을 나타내고 있을까요?</Quiz>
           <Question
             style={{
               backgroundColor:

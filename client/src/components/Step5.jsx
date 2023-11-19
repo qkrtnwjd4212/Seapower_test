@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import Container from "../UI/Container";
 import quizImg from "../assets/quiz4_7_img.png";
+import Quiz from "../UI/Quiz";
 import "../index.css";
 import Question from "../UI/Question";
 import QuestionContents from "../UI/QuestionContents";
@@ -45,17 +46,11 @@ export const Step5 = ({
           }}
         >
           <img src={quizImg} style={{ height: "25vh" }} />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+          <Quiz>
             산호는 해양 생태계를 풍성하게 만드는 중요한 생물으로 ‘바다의
             열대우림’이라고도 불립니다. 산호에 대한 설명으로 옳지 않은 것은
             무엇일까요?
-          </div>
+          </Quiz>
           <Question
             style={{
               backgroundColor:
