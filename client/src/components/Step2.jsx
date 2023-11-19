@@ -1,5 +1,6 @@
 import { Fragment, useState } from "react";
 import Quiz from "../UI/Quiz";
+import Solution from "../UI/Solution";
 import Container from "../UI/Container";
 import quizImg from "../assets/quiz1_3_img.png";
 import "../index.css";
@@ -84,7 +85,16 @@ export const Step2 = ({
           >
             <QuestionContents>탕후루 나무꼬치</QuestionContents>
           </Question>
-          {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
+          {isSelect && (
+            <Solution>
+              {isAnswer ? (
+                <div style={{ color: "green" }}>"정답 ! "</div>
+              ) : (
+                <div style={{ color: "red" }}>"오답 ! "</div>
+              )}
+              <div>바다에 가장 많이 버려지는 쓰레기는 담배꽁초입니다😵</div>
+            </Solution>
+          )}
         </div>
       </Container>
     </Fragment>
