@@ -259,7 +259,7 @@ export const Moonhaeryuk = () => {
 
 const StyledButton = styled.button`
   width: 70vw;
-  margin: 3vh;
+  margin: auto;
   height: 5vh;
   border-radius: 10px;
   background-color: var(--light-sand);
