@@ -80,7 +80,7 @@ export const Result1 = () => {
           </Item>
         </ActivityContainer>
 
-        <BoatImg src={Boat}/>
+        <BoatImg src={Boat} />
 
         <ShareBtn
           onClick={() =>
@@ -103,20 +103,24 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 100vw;
   @media (min-width: 800px) {
-    width: 400px;
+    width: 350px;
   }
   background: linear-gradient(to bottom, #ffffff 370px, #00b4d8 600px);
   max-width: 800px;
 `;
 
 const TitleText = styled.div`
-  margin-top: 30px;
+  margin-top: 6vh;
   text-align: center;
 `;
 
 const TitleBox = styled.div`
   padding: 10px;
-  width: 300px;
+
+  width: 90vw;
+  @media (min-width: 800px) {
+    width: 200px;
+  }
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -130,7 +134,10 @@ const TitleBox = styled.div`
 `;
 
 const ResultImg = styled.img`
-  width: 350px;
+  width: 90vw;
+  @media (min-width: 800px) {
+    width: 350px;
+  }
   margin-top: 50px;
   background-image: contain; // 이미지의 가로세로 비율을 유지하면서, 이미지가 잘리지 않을 때까지만 채운다.
   max-width: 500px;
@@ -140,32 +147,38 @@ const DetailBox = styled.div`
   border-radius: 10px;
   border: 1px solid #000;
   background: var(--light_sand, #ffeed9);
-  width: 320px;
-  //height: 500px;
-  margin: 50px 10px 50px 10px;
+  width: 85vw;
+  margin-top: 4vh;
   border: none;
-  padding: 30px 20px 30px 20px;
+  padding: 4vw;
   text-align: left;
   line-height: 1.6;
   font-size: 18px;
+  @media (min-width: 800px) {
+    width: 250px;
+  }
 `;
 
 const TrashDetail = styled.div`
   border-radius: 10px;
   border: 1px solid #000;
   background: var(--light_sand, #ffeed9);
-  width: 300px;
+
+  width: 85vw;
+  @media (min-width: 800px) {
+    width: 250px;
+  }
   height: 150px;
-  margin: 0 10px 50px 10px;
+  margin-top: 4vh;
   border: none;
-  padding: 20px;
+  padding: 4vw;
   text-align: center;
 `;
 
 const BoatImg = styled.img`
-width: 85%;
-height: 150px;
-filter: blur(0.5px);
+  width: 85%;
+  height: 150px;
+  filter: blur(0.5px);
 `;
 
 const ActivityContainer = styled.div`

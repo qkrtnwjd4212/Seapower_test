@@ -84,7 +84,12 @@ export const Step1 = ({
           >
             <QuestionContents>종이</QuestionContents>
           </Question>
-          {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
+          {isSelect && (
+            <div>
+              {isAnswer ? "정답 ! " : "오답 ! "}
+              <div>이거</div>
+            </div>
+          )}
         </div>
       </Container>
     </Fragment>

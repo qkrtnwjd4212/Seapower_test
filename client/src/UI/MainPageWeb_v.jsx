@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const MainPageWeb_v = styled.div`
   @media (min-width: 800px) {
-    width: 400px;
+    width: 350px;
   }
   @media (max-width: 250px) {
     width: 100vw;

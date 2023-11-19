@@ -85,7 +85,12 @@ export const Step6 = ({
           >
             <QuestionContents>개복치</QuestionContents>
           </Question>
-          {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
+          {isSelect && (
+            <div>
+              {isAnswer ? "정답 ! " : "오답 ! "}
+              <div>이거</div>
+            </div>
+          )}
         </div>
       </Container>
     </Fragment>
