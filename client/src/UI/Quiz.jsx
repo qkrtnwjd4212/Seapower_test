@@ -5,7 +5,7 @@ const Quiz = styled.div`
   alignitems: center;
   width: 85vw;
   @media (min-width: 800px) {
-    width: 30vw;
+    width: 400px;
   }
 `;
 export default Quiz;

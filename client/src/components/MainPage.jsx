@@ -8,7 +8,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   @media (min-width: 800px) {
-    width: 30vw;
+    width: 100px;
   }
 `;
 export const MainPage = () => {
