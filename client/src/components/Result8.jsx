@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Container from "../UI/Container";
 import { Header } from "./Header";
-import Malmijal from "../assets/malmijal.png";
+import Gangchi from "../assets/gangchi.png";
 import Boat from "../assets/boat.png";
 import React, { useEffect, Fragment } from "react";
 import Caresea from "../assets/caresea.png";
@@ -33,7 +33,7 @@ function Kakao() {
   );
 }
 
-export const Result1 = () => {
+export const Result8 = () => {
   const handleItemClick = (url) => {
     window.open(url, "_blank");
   };
@@ -43,22 +43,17 @@ export const Result1 = () => {
       <Container>
         <Header />
         <TitleText>
-          아직은 바다와 친하지 않은 당신, 더 공부가 필요해요!
+          가장 고난이도의 문제를 맞추신 당신, <br/> 
+          해양 잘알이시군요!
         </TitleText>
-        <TitleBox>유사벌레붙이말미잘</TitleBox>
-        <ResultImg src={Malmijal} alt="malmijal_img" />
+        <TitleBox>강치</TitleBox>
+        <ResultImg src={Gangchi} alt="gangchi_img" />
         <DetailBox>
-          바다와 친하지 않은 당신, 유사벌레붙이말미잘과 친해져 보는 것은
-          어떨까요? <br /> 유사벌레붙이말미잘은 30년 만에 인천 바다에서 확인된
-          종입니다. 긴 원통형의 몸체와 촉수다발을 가지고 있습니다. 조간대의 모래
-          진흙 갯벌에 몸체를 박고 살아갑니다.
-          <br /> 한국 해역에서 처음으로 보고된 종입니다. 한반도 고유종으로 개체
-          수가 많지 않은 종이에요.
-          <br /> 유사벌레붙이 말미잘이 살아가는 해역의 쓰레기 현황을
-          확인해볼까요?
+          바다와 친한 당신, 우리 바다의 멸종생물인 강치에 대해서도 잘 알고 있군요! <br /> 강치는 독도에 서식했던 바다사자를 말합니다. 원래 독도는 바다사자인 강치의 옛말을 따 가지도라 불릴 정도로 강치가 많았다고 해요. 안타깝게도 남획으로 강치는 1970년 이후 더 이상 발견되지 않고 있어요. <br /> 강치가 서식하던 해역의 쓰레기 현황을 확인해볼까요?
+
         </DetailBox>
 
-        <TitleText>유사벌레붙이말미잘이 살고 있는 바다는 지금...</TitleText>
+        <TitleText>강치가 살고 있는 바다는 지금...</TitleText>
         <Kakao />
         <TrashDetail>플라스틱 : 플라스틱 부표, 그물, 통발 등</TrashDetail>
 
@@ -85,8 +80,8 @@ export const Result1 = () => {
         <ShareBtn
           onClick={() =>
             handleKaKaoShareBtn({
-              FRIENDS: "저는 유사벌레붙이말미잘이 나왔어요!",
-              THUMB: "https://ifh.cc/g/1jt2Dm.png",
+              FRIENDS: "저는 강치가 나왔어요!",
+              THUMB: "https://ifh.cc/g/l2VTzo.png",
             })
           }
         >
@@ -103,24 +98,20 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 100vw;
   @media (min-width: 800px) {
-    width: 350px;
+    width: 400px;
   }
   background: linear-gradient(to bottom, #ffffff 370px, #00b4d8 600px);
   max-width: 800px;
 `;
 
 const TitleText = styled.div`
-  margin-top: 6vh;
+  margin-top: 30px;
   text-align: center;
 `;
 
 const TitleBox = styled.div`
   padding: 10px;
-
-  width: 90vw;
-  @media (min-width: 800px) {
-    width: 200px;
-  }
+  width: 300px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -134,10 +125,7 @@ const TitleBox = styled.div`
 `;
 
 const ResultImg = styled.img`
-  width: 90vw;
-  @media (min-width: 800px) {
-    width: 350px;
-  }
+  width: 350px;
   margin-top: 50px;
   background-image: contain; // 이미지의 가로세로 비율을 유지하면서, 이미지가 잘리지 않을 때까지만 채운다.
   max-width: 500px;
@@ -147,31 +135,25 @@ const DetailBox = styled.div`
   border-radius: 10px;
   border: 1px solid #000;
   background: var(--light_sand, #ffeed9);
-  width: 85vw;
-  margin-top: 4vh;
+  width: 320px;
+  //height: 500px;
+  margin: 50px 10px 50px 10px;
   border: none;
-  padding: 4vw;
+  padding: 30px 20px 30px 20px;
   text-align: left;
   line-height: 1.6;
   font-size: 18px;
-  @media (min-width: 800px) {
-    width: 250px;
-  }
 `;
 
 const TrashDetail = styled.div`
   border-radius: 10px;
   border: 1px solid #000;
   background: var(--light_sand, #ffeed9);
-
-  width: 85vw;
-  @media (min-width: 800px) {
-    width: 250px;
-  }
+  width: 300px;
   height: 150px;
-  margin-top: 4vh;
+  margin: 0 10px 50px 10px;
   border: none;
-  padding: 4vw;
+  padding: 20px;
   text-align: center;
 `;
 

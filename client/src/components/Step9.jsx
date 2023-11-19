@@ -1,7 +1,9 @@
 import { Fragment, useState } from "react";
 import Container from "../UI/Container";
+import Solution from "../UI/Solution";
 import quizImg from "../assets/quiz8_10_img.png";
 import "../index.css";
+import Quiz from "../UI/Quiz";
 import Question from "../UI/Question";
 import QuestionContents from "../UI/QuestionContents";
 
@@ -45,18 +47,12 @@ export const Step9 = ({
           }}
         >
           <img src={quizImg} style={{ height: "25vh" }} />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+          <Quiz style={{ flexDirection: "column" }}>
             다음에서 설명하는 해양오염 현상은 무엇입니까?
-            <span style={{ color: "red" }}>
+            <div style={{ color: "red" }}>
               물속에 질소나 인이 많아 플랑크톤의 영양분이 많아지는 현상
-            </span>
-          </div>
+            </div>
+          </Quiz>
           <Question
             style={{
               backgroundColor:
@@ -92,7 +88,16 @@ export const Step9 = ({
           >
             <QuestionContents>부영양화</QuestionContents>
           </Question>
-          {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
+          {isSelect && (
+            <Solution>
+              {isAnswer ? (
+                <div style={{ color: "green" }}>정답 !</div>
+              ) : (
+                <div style={{ color: "red" }}>오답 !</div>
+              )}
+              <div>영양분이 많아지는 현상이므로 富(부자 부)영양화입니다🦠</div>
+            </Solution>
+          )}
         </div>
       </Container>
     </Fragment>

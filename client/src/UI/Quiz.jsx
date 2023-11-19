@@ -1,14 +1,11 @@
 import styled from "styled-components";
-
-const Container = styled.div`
+const Quiz = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  flex-direction: column;
+  width: 85vw;
   @media (min-width: 800px) {
-    width: 350px;
+    width: 320px;
   }
 `;
-
-export default Container;
+export default Quiz;

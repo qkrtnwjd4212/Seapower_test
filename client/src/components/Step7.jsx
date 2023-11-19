@@ -1,4 +1,6 @@
 import { Fragment, useState } from "react";
+import Quiz from "../UI/Quiz";
+import Solution from "../UI/Solution";
 import Container from "../UI/Container";
 import quizImg from "../assets/gangchiquiz.png";
 import "../index.css";
@@ -47,15 +49,7 @@ export const Step7 = ({
           }}
         >
           <img src={quizImg} style={{ height: "25vh" }} />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            다음 사진은 어떤 생물 종을 나타내고 있을까요?
-          </div>
+          <Quiz>다음 사진은 어떤 생물 종을 나타내고 있을까요?</Quiz>
           <Question
             style={{
               backgroundColor:
@@ -91,7 +85,16 @@ export const Step7 = ({
           >
             <QuestionContents>바다코끼리</QuestionContents>
           </Question>
-          {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
+          {isSelect && (
+            <Solution>
+              {isAnswer ? (
+                <div style={{ color: "green" }}>정답 !</div>
+              ) : (
+                <div style={{ color: "red" }}>오답 !</div>
+              )}
+              <div>사진의 생물은 토종 바다사자, 강치입니다!🦭</div>
+            </Solution>
+          )}
         </div>
       </Container>
     </Fragment>

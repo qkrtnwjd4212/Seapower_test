@@ -1,6 +1,8 @@
 import { Fragment, useState } from "react";
 import Container from "../UI/Container";
+import Solution from "../UI/Solution";
 import quizImg from "../assets/quiz4_7_img.png";
+import Quiz from "../UI/Quiz";
 import "../index.css";
 import Question from "../UI/Question";
 import QuestionContents from "../UI/QuestionContents";
@@ -45,16 +47,10 @@ export const Step6 = ({
           }}
         >
           <img src={quizImg} style={{ height: "25vh" }} />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+          <Quiz>
             맷돌 같은 피부를 가지고 있고 항생 물질로 다른 물고기의 상처를
             치료해주는 물고기는 무엇일까요?
-          </div>
+          </Quiz>
           <Question
             style={{
               backgroundColor:
@@ -90,7 +86,19 @@ export const Step6 = ({
           >
             <QuestionContents>개복치</QuestionContents>
           </Question>
-          {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
+          {isSelect && (
+            <Solution>
+              {isAnswer ? (
+                <div style={{ color: "green" }}>정답 !</div>
+              ) : (
+                <div style={{ color: "red" }}>오답 !</div>
+              )}
+              <div>
+                맷돌 같은 피부를 가졌고 항생 물질로 다른 물고기의 상처를
+                치료해주는 물고기는 개복치입니다🐟
+              </div>
+            </Solution>
+          )}
         </div>
       </Container>
     </Fragment>

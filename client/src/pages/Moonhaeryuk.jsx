@@ -1,4 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
+import MainPageWeb_v from "../UI/MainPageWeb_v";
+import "../index.css";
 import { MainPage, Header } from "../components";
 import {
   Step1,
@@ -16,6 +18,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Button = styled(Link)`
+  color: black;
+  text-decoration: none;
   cursor: pointer;
 `;
 
@@ -98,118 +102,143 @@ export const Moonhaeryuk = () => {
   return (
     <Fragment>
       <div
-        style={{
-          margin: "0",
-          backgroundColor: "white",
-          height: "95vh",
-          display: "flex",
-          justifyContent: "center",
-        }}
+        style={{ width: "100vw", display: "flex", justifyContent: " center" }}
       >
-        <div
+        <MainPageWeb_v
           style={{
             margin: "0",
-            height: "95vh",
+            backgroundColor: "white",
+            height: "100vh",
             display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
+            justifyContent: "center",
           }}
         >
-          <Header />
-          {step === 0 ? <MainPage /> : ""}
-          {step === 1 ? (
-            <Step1
-              totalScoreHandler={totalScoreHandler}
-              setIsSelect={setIsSelect}
-              isSelect={isSelect}
-              conservationScoreHandler={conservationScoreHandler}
-            />
-          ) : step === 2 ? (
-            <Step2
-              totalScoreHandler={totalScoreHandler}
-              setIsSelect={setIsSelect}
-              isSelect={isSelect}
-              conservationScoreHandler={conservationScoreHandler}
-              setEasy={setEasy}
-            />
-          ) : step === 3 ? (
-            <Step3
-              totalScoreHandler={totalScoreHandler}
-              setIsSelect={setIsSelect}
-              isSelect={isSelect}
-              conservationScoreHandler={conservationScoreHandler}
-            />
-          ) : step === 4 ? (
-            <Step4
-              totalScoreHandler={totalScoreHandler}
-              setIsSelect={setIsSelect}
-              isSelect={isSelect}
-              ecologyScoreHandler={ecologyScoreHandler}
-            />
-          ) : step === 5 ? (
-            <Step5
-              totalScoreHandler={totalScoreHandler}
-              setIsSelect={setIsSelect}
-              isSelect={isSelect}
-              ecologyScoreHandler={ecologyScoreHandler}
-            />
-          ) : step === 6 ? (
-            <Step6
-              totalScoreHandler={totalScoreHandler}
-              setIsSelect={setIsSelect}
-              isSelect={isSelect}
-              ecologyScoreHandler={ecologyScoreHandler}
-            />
-          ) : step === 7 ? (
-            <Step7
-              totalScoreHandler={totalScoreHandler}
-              setIsSelect={setIsSelect}
-              isSelect={isSelect}
-              ecologyScoreHandler={ecologyScoreHandler}
-              setBonus={setBonus}
-            />
-          ) : step === 8 ? (
-            <Step8
-              totalScoreHandler={totalScoreHandler}
-              setIsSelect={setIsSelect}
-              isSelect={isSelect}
-              environmentScoreHandler={environmentScoreHandler}
-            />
-          ) : step === 9 ? (
-            <Step9
-              totalScoreHandler={totalScoreHandler}
-              setIsSelect={setIsSelect}
-              isSelect={isSelect}
-              environmentScoreHandler={environmentScoreHandler}
-            />
-          ) : step === 10 ? (
-            <Step10
-              totalScoreHandler={totalScoreHandler}
-              setIsSelect={setIsSelect}
-              isSelect={isSelect}
-              environmentScoreHandler={environmentScoreHandler}
-            />
-          ) : (
-            ""
-          )}
-          {/* {step === 11 ? <ResultPage totalScore={totalScore} /> : ""} */}
+          <div
+            style={{
+              margin: "0",
+              height: "98vh",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+            }}
+          >
+            <Header />
+            {step === 0 ? <MainPage /> : ""}
+            {step === 1 ? (
+              <Step1
+                totalScoreHandler={totalScoreHandler}
+                setIsSelect={setIsSelect}
+                isSelect={isSelect}
+                conservationScoreHandler={conservationScoreHandler}
+              />
+            ) : step === 2 ? (
+              <Step2
+                totalScoreHandler={totalScoreHandler}
+                setIsSelect={setIsSelect}
+                isSelect={isSelect}
+                conservationScoreHandler={conservationScoreHandler}
+                setEasy={setEasy}
+              />
+            ) : step === 3 ? (
+              <Step3
+                totalScoreHandler={totalScoreHandler}
+                setIsSelect={setIsSelect}
+                isSelect={isSelect}
+                conservationScoreHandler={conservationScoreHandler}
+              />
+            ) : step === 4 ? (
+              <Step4
+                totalScoreHandler={totalScoreHandler}
+                setIsSelect={setIsSelect}
+                isSelect={isSelect}
+                ecologyScoreHandler={ecologyScoreHandler}
+              />
+            ) : step === 5 ? (
+              <Step5
+                totalScoreHandler={totalScoreHandler}
+                setIsSelect={setIsSelect}
+                isSelect={isSelect}
+                ecologyScoreHandler={ecologyScoreHandler}
+              />
+            ) : step === 6 ? (
+              <Step6
+                totalScoreHandler={totalScoreHandler}
+                setIsSelect={setIsSelect}
+                isSelect={isSelect}
+                ecologyScoreHandler={ecologyScoreHandler}
+              />
+            ) : step === 7 ? (
+              <Step7
+                totalScoreHandler={totalScoreHandler}
+                setIsSelect={setIsSelect}
+                isSelect={isSelect}
+                ecologyScoreHandler={ecologyScoreHandler}
+                setBonus={setBonus}
+              />
+            ) : step === 8 ? (
+              <Step8
+                totalScoreHandler={totalScoreHandler}
+                setIsSelect={setIsSelect}
+                isSelect={isSelect}
+                environmentScoreHandler={environmentScoreHandler}
+              />
+            ) : step === 9 ? (
+              <Step9
+                totalScoreHandler={totalScoreHandler}
+                setIsSelect={setIsSelect}
+                isSelect={isSelect}
+                environmentScoreHandler={environmentScoreHandler}
+              />
+            ) : step === 10 ? (
+              <Step10
+                totalScoreHandler={totalScoreHandler}
+                setIsSelect={setIsSelect}
+                isSelect={isSelect}
+                environmentScoreHandler={environmentScoreHandler}
+              />
+            ) : (
+              ""
+            )}
+            {/* {step === 11 ? <ResultPage totalScore={totalScore} /> : ""} */}
 
-          {step < 10 ? (
-            <button
-              onClick={onClickNextButton}
-              disabled={step !== 0 && !isSelect}
-            >
-              {step === 0 ? "시작" : "다음"}
-            </button>
-          ) : step === 10 ? (
-            <>
-              {selectMarineLife()}
-              <Button to={`/result/${resultId}`}>결과보기</Button>
-            </>
-          ) : (
-            ""
-          )}
-        </div>
+            {step < 10 ? (
+              <button
+                style={{
+                  height: "5vh",
+                  borderRadius: "10px",
+                  backgroundColor: "var(--light-sand)",
+                }}
+                onClick={onClickNextButton}
+                disabled={step !== 0 && !isSelect}
+              >
+                {step === 0 ? "시작" : "다음"}
+              </button>
+            ) : step === 10 ? (
+              <>
+                {selectMarineLife()}
+                <button
+                  style={{
+                    height: "5vh",
+                    borderRadius: "10px",
+                    backgroundColor: "var(--light-sand)",
+                  }}
+                >
+                  <Button
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                    to={`/result/${resultId}`}
+                  >
+                    결과보기
+                  </Button>
+                </button>
+              </>
+            ) : (
+              ""
+            )}
+          </div>
+        </MainPageWeb_v>
       </div>
     </Fragment>
   );
