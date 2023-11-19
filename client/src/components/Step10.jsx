@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import Container from "../UI/Container";
 import quizImg from "../assets/quiz8_10_img.png";
+import Solution from "../UI/Solution";
 import "../index.css";
 import Quiz from "../UI/Quiz";
 import Question from "../UI/Question";
@@ -69,8 +70,19 @@ export const Step10 = ({
           >
             <QuestionContents>X</QuestionContents>
           </Question>
-
-          {isSelect && <div>{isAnswer ? "정답 ! " : "오답 ! "}이거</div>}
+          {isSelect && (
+            <Solution>
+              {isAnswer ? (
+                <div style={{ color: "green" }}>정답 !</div>
+              ) : (
+                <div style={{ color: "red" }}>오답 !</div>
+              )}
+              <div>
+                우리나라의 갯벌은 아직 IPCC에 의해 블루카본으로 인정받지
+                못했습니다🥺
+              </div>
+            </Solution>
+          )}
         </div>
       </Container>
     </Fragment>
