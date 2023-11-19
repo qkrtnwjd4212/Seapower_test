@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Container from "../UI/Container";
 import { Header } from "./Header";
-import Malmijal from "../assets/malmijal.png";
+import Haema from "../assets/haema.png";
 import Boat from "../assets/boat.png";
 import React, { useEffect, Fragment } from "react";
 import Caresea from "../assets/caresea.png";
@@ -33,7 +33,7 @@ function Kakao() {
   );
 }
 
-export const Result1 = () => {
+export const Result3 = () => {
   const handleItemClick = (url) => {
     window.open(url, "_blank");
   };
@@ -43,22 +43,17 @@ export const Result1 = () => {
       <Container>
         <Header />
         <TitleText>
-          아직은 바다와 친하지 않은 당신, 더 공부가 필요해요!
+          분야별로 고른 지식을 가진 당신, 다른 분야도 함께 알아봐요!
         </TitleText>
-        <TitleBox>유사벌레붙이말미잘</TitleBox>
-        <ResultImg src={Malmijal} alt="malmijal_img" />
+        <TitleBox>해마</TitleBox>
+        <ResultImg src={Haema} alt="haema_img" />
         <DetailBox>
-          바다와 친하지 않은 당신, 유사벌레붙이말미잘과 친해져 보는 것은
-          어떨까요? <br /> 유사벌레붙이말미잘은 30년 만에 인천 바다에서 확인된
-          종입니다. 긴 원통형의 몸체와 촉수다발을 가지고 있습니다. 조간대의 모래
-          진흙 갯벌에 몸체를 박고 살아갑니다.
-          <br /> 한국 해역에서 처음으로 보고된 종입니다. 한반도 고유종으로 개체
-          수가 많지 않은 종이에요.
-          <br /> 유사벌레붙이 말미잘이 살아가는 해역의 쓰레기 현황을
-          확인해볼까요?
+          해양 분야별로 고른 지식을 가지고 있는 당신, 해마처럼 독특한 성격의 보유자시군요! <br />
+          해마는 암컷이 수컷의 배에 있는 보육낭에 알을 넣어 수정한다는 사실, 알고 계신가요? 수컷이 알을 품고 새끼를 낳는 해마의 번식습성은 지구상에 존재하는 동물 중 해마류만이 갖고 있는 독특한 습성입니다. 게다가 말을 닮은 외모와 달리, 수 미터를 이동하는 데 이틀이 걸릴 정도로 어류 중 이동 속도가 가장 느리다고 해요. <br /> 유니크한 당신을 닮은 해마가 살아가는 해역의 쓰레기 현황을 확인해볼까요?
+
         </DetailBox>
 
-        <TitleText>유사벌레붙이말미잘이 살고 있는 바다는 지금...</TitleText>
+        <TitleText>해마가 살고 있는 바다는 지금...</TitleText>
         <Kakao />
         <TrashDetail>플라스틱 : 플라스틱 부표, 그물, 통발 등</TrashDetail>
 
@@ -80,13 +75,13 @@ export const Result1 = () => {
           </Item>
         </ActivityContainer>
 
-        <BoatImg src={Boat}/>
+        <BoatImg src={Boat} />
 
         <ShareBtn
           onClick={() =>
             handleKaKaoShareBtn({
-              FRIENDS: "저는 유사벌레붙이말미잘이 나왔어요!",
-              THUMB: "https://ifh.cc/g/1jt2Dm.png",
+              FRIENDS: "저는 해마가 나왔어요!",
+              THUMB: "https://ifh.cc/g/T1zoAr.png",
             })
           }
         >
