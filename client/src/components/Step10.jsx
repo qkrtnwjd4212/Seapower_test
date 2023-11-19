@@ -46,7 +46,7 @@ export const Step10 = ({
             gap: 10,
           }}
         >
-          <img src={quizImg} style={{ height: "25vh" }} />
+          <img src={quizImg} style={{ height: "25vh", margin: "3vh" }} />
           <Quiz>
             블루카본이란 바다와 해양 생태계에 의해 흡수되는 탄소 및 흡수원으로
             블루카본의 탄소 흡수량은 육상의 식물보다 50배 가량 많다고 합니다.

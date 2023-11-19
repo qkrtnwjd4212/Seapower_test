@@ -46,7 +46,7 @@ export const Step8 = ({
             gap: 10,
           }}
         >
-          <img src={quizImg} style={{ height: "25vh" }} />
+          <img src={quizImg} style={{ height: "25vh", margin: "3vh" }} />
           <Quiz>
             육상 생태계의 먹이 사슬은 식물과 초식 동물, 포식 동물의 세 단계가
             기본적으로 굉장히 단순합니다. 해양 생태계의 먹이 사슬도 육상

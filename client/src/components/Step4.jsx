@@ -46,7 +46,7 @@ export const Step4 = ({
             gap: 10,
           }}
         >
-          <img src={quizImg} style={{ height: "25vh" }} />
+          <img src={quizImg} style={{ height: "25vh", margin: "3vh" }} />
           <Quiz>
             소설 '모비 딕'에 등장하는 어종으로, 육식동물로서는 손에 꼽힐 정도로
             거대한 어종은 무엇일까요?

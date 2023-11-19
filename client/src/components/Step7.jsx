@@ -48,7 +48,7 @@ export const Step7 = ({
             gap: 10,
           }}
         >
-          <img src={quizImg} style={{ height: "25vh" }} />
+          <img src={quizImg} style={{ height: "25vh", margin: "3vh" }} />
           <Quiz>다음 사진은 어떤 생물 종을 나타내고 있을까요?</Quiz>
           <Question
             style={{

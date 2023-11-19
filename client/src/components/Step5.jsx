@@ -46,7 +46,7 @@ export const Step5 = ({
             gap: 10,
           }}
         >
-          <img src={quizImg} style={{ height: "25vh" }} />
+          <img src={quizImg} style={{ height: "25vh", margin: "3vh" }} />
           <Quiz>
             산호는 해양 생태계를 풍성하게 만드는 중요한 생물으로 ‘바다의
             열대우림’이라고도 불립니다. 산호에 대한 설명으로 옳지 않은 것은
@@ -96,7 +96,13 @@ export const Step5 = ({
               ) : (
                 <div style={{ color: "red" }}>오답 !</div>
               )}
-              <div>산호는 동물입니다✨</div>
+              <div>
+                산호는 식물이 아닌 산호충의 군집으로, 동물입니다✨
+                <br />
+                산호의 색은 산호에 깃들어 사는 조류의 색입니다
+                <br />
+                산호는 환경만 좋으면 수백 년을 산다고 합니다🪸
+              </div>
             </Solution>
           )}
         </div>
