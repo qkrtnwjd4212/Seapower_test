@@ -9,9 +9,6 @@ const Container = styled.div`
   @media (min-width: 800px) {
     width: 350px;
   }
-  @media (max-width: 250px) {
-    width: 100vw;
-  }
 `;
 
 export default Container;
